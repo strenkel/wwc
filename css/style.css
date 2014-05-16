@@ -908,6 +908,7 @@ hr {
 #page {
 	margin: 0 auto;
 	width: 1250px;
+	padding: 0 10px;
 }
 
 #topmenu {
@@ -928,8 +929,8 @@ hr {
 }
 
 #sponsors .prizeBy {
-	color: #787878;
-	font-size: 16px;
+	color: #aaa;
+	font-size: 12px;
 	margin: 0 auto;
 	width: 1250px;
 	padding: 5px 0 0 0;

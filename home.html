@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web worker contest</title>
+	<meta name="robots" content="INDEX,FOLLOW">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<header id="topmenu">
+	<nav>
+		<ul>
+			<li class="logo"><div id="logo"><img src="images/logos/wwc_logo.jpg" alt="WWC-Logo" /></div></li>
+			<li><a href="home.html" class="active">Home</a></li>
+			<li><a href="guide.html">Guide</a></li>
+			<li><a href="game.html">Game</a></li>
+			<li><a href="upload.html">Upload</a></li>
+			<li><a href="top20.html">Top 20 & Challenger</a></li>
+			<li><a href="winner.html">Winner</a></li>
+			<li><a target="_blank" href="http://webworkercontest.net/blog/">Blog</a></li>
+		</ul>
+	</nav>
+</header>
+<section id="page">
+	<section id="content">
+		<div id="left">
+			<h2>Intro</h2>
+			<hr width="100">
+			<article>
+				<p>
+					Willkommen beim <b>Web Worker Contest</b>, einem JavaScript Programmierwettbewerb. <br>
+					Bei diesem Wettbewerb treten jeweils zwei JavaScript-Programme gegeneinander an. Sie müssen auf einer Spielfläche von 100 x 100 Felder mit einfachen Zügen (top, down, left, right) möglichst viele Felder besetzen. Gewonnen hat das Programm, dass am Ende mehr Felder besetzt hat.<br>
+					Realisiert wird der Contest auf Basis von <a target="_blank" href="http://en.wikipedia.org/wiki/Web_worker">Web Workern</a>. Die JavaScript-Programme, die gegeneinander antreten, sind Web Worker. Der Web Worker Contest ist damit vielleicht das erste
+					<a target="_blank" href="http://de.wikipedia.org/wiki/Programmierspiel">Programmierspiel</a>, das Web Worker benutzt.<br>
+					Die genauen Spielregeln und wie man solche Web Worker programmiert, erfahrt ihr auf der Guide-Seite.<br>
+					<br>
+					Mit der &lt; &gt; Navigation im Menü-Balken könnt ihr alle Seiten des Web Worker Contest erreichen. Auf der Hauptseite könnt ihr zwei Web Worker gegeneinander antreten lassen. Welche Web Worker gegeneinander antreten sollen, stellt ihr auf der 'Select web worker'-Seite ein. Hier könnt ihr auch euren eigenen Web Worker ausprobieren. Möchtet ihr am Wettbewerb teilnehmen, so müsst ihr euren Web Worker auf der Upload-Seite hochladen. Auf der Table-Seite seht ihr die Gesammtplazierung aller Web Worker. Diese Tabelle basiert auf Spielen, die mit Super-User-Rechten ausgeführt wurden. Der Super-User hat die Möglichkeit, die Spiel-Ergebnisse auf dem Server hochzuladen und in einer entsprechenden Datenbank zu speichern. Ein solcher Super-User-Rechner läßt während des gesamten Contests Web Worker gegeneinander antreten. So wird man i.d.R kurz nach dem Hochladen die Spielergebnisse und die Plazierungen seines Web Workers beobachten können.<br>
+					<br>
+					Im Blog und auf Twitter werden interessante Spielstrategien und Programme vorgestellt. Neben Neuigkeiten werden dort auch die jeweiligen Tages/Wochen-Sieger veröffentlicht.<br>
+				</p>
+			</article>
+			<h2>Wie kann ich teilnehmen?</h2>
+			<hr width="100">
+			<div class="toggleBox">
+				<p class="toggleHeadline" onclick="jQuery('.toggleText').toggleClass('hidden'); if(jQuery('.toggleText').hasClass('hidden')) {jQuery('.toggleIcon').text('+')} else {jQuery('.toggleIcon').text('-')}">WEB WORKER CONTEST - Guide</p><div class="toggleIcon" onclick="jQuery('.toggleText').toggleClass('hidden'); if(jQuery('.toggleText').hasClass('hidden')) {jQuery('.toggleIcon').text('+')} else {jQuery('.toggleIcon').text('-')}">+</div>
+				<article class="toggleText hidden">
+					<p>
+						Der Web Worker Contest ist ein JavaScript Programmierwettbewerb. Auf einer Spielfläche von 100 x 100 quadratischen Feldern treten jeweils 2 JavaScript-Programme gegeneinander an. Ziel ist es, von einem zufällig zugeteiltem Startfeld aus möglichst viele Felder der Spielfläche zu besetzen. Gewonnen hat das Programm, dass am Ende mehr Felder besetzt hat. Ein Zug besteht darin, von seinem aktuellen Feld entweder das oberer, unterer, rechte oder linke angrenzende Feld zu besetzen. Das neue Feld darf aber nur dann besetzt werden, wenn es nicht zuvor von dem gegnerischen Programm besetzt wurde. Ist ein Zug möglich (das neue Feld ist frei) wechselt die aktuelle Position auf das gewünschte Feld. Ist ein Zug nicht möglich (das Feld ist schon vom Gegner gesetzt oder man will das Spielfeld verlassen), bleibt man auf der aktuellen Position stehen. Felder, die man selber zuvor schon besetzt hat, darf man weiterhin betreten (zählen allerdings nicht doppelt). Die Programme haben keinerlei Informationen über das Spielfeld. Sie können das Spielfeld nicht sehen. Sie ziehen gewissermaßen blind. Die einzige Information, die sie erhalten (und die sie auswerten können), ist, ob ihr gewählter Zug möglich ist oder nicht. Die Programme ziehen nicht abwechselnd, sondern so schnell sie können. Es kommt also darauf an, möglichst schnell, möglichst intelligente Züge zu machen.<br>
+						<br>
+						Realisiert wird der Wettbewerb mit Hilfe von Web Workern. Web Worker sind JavaScript Programme in einer separaten Datei, die parallel im Hintergrund laufen (Wiki). Jeweils 2 Web Worker treten bei dem Spiel gegeneinander an. Welche Web Worker gegeneinander spielen, stellt man auf der Seite 'Select web workers | Test your own web worker' ein. Mit der Option 'Random' wählt der Server zufällig 2 Web Worker aus den bereits hochgeladenen Web Workern aus. Alternativ kann man selbst 2 konkrete Web Worker auswählen. Mit der Option 'Local file' kann man seinen eigenen Web Worker gegen einen beliebig anderen antreten lassen. Dabei ist der eigene Web Worker einfach eine lokale JavaScript-Datei mit entsprechendem Code. In diesem Fall wird der eigene Web Worker nicht auf den Server hochgeladen. Diese Möglichkeit dient vor allem dem Testen und Optimieren eigener Web Worker. Möchte man an dem Web Worker Contest teilnehmen, so muss man seinen eigenen Web Worker auf der Seite 'Upload your web worker' hochladen. Man kann ihn anschließend (nach einem reload) in der Web Worker - Selectbox auswählen.<br>
+						<br>
+						Läßt man als normaler Benutzer Web Worker gegeneinander spielen, so werden die Ergebnisse nur lokal ausgewertet. Der Super-User hat die Möglichkeit, Web Worker gegeneinander antreten zu lassen und die Ergebnisse auf dem Server zu speichern. Aus allen so gespielten Partien wird die Tabelle errechnet, die auf der Seite 'Table' angezeigt wird. Dort ist also immer der aktuelle Spitzenreiter zu sehen.<br>
+						<br>
+						Wie programmiert man nun einen Web Worker? Web Worker interagieren mit dem Hauptprogramm via Messages. Der Web Worker müssen für einen Zug jeweils eines der Schlüsselwörter up, down, right oder left an das Hauptprogramm senden. Ist der Zug möglich, wird true zurück gesendet, andernfalls false. Um ein Dauerfeuern der Web Worker zu verhindern, sendet das Hauptprogramm mit der Erfolgsmeldung eine Id mit. Diese Id muss der Web Worker mit seinem nächsten Zug zurücksenden. Ohne korrekte Id wird der Web Worker disqualifiziert.<br>
+						<br>
+						Zum Schluss noch ein Beispiel eines einfachen Web Workers. Er geht überwiegend gerade aus. War sein letzter Zug möglich, geht er mit über 95% Wahrscheinlichkeit in dieselbe Richtung weiter. War sein letzter Zug nicht möglich, sucht er sich zufällig eine neue Richtung.<br>
+						<br>
+						<br>
+					</p>
+				<pre>
+					<code>
+var direction;
+
+// Wird aufgerufen, sobald das Hauptprogramm die Erfolgsmeldung
+// an den Web Worker sendet.
+onmessage = function (event) {
+
+	// Die Erfolgsmeldung wird mit dem Feld 'done' (true | false) gesendet.
+	var done = event.data.done;
+
+	// Neue Richtung bestimmen.
+		if (done) {
+	direction = holdOrChangeDirection(direction);
+	} else {
+		direction = getRandomDirection();
+	}
+
+	// Teilt dem Hauptprogramm die neue Richtung mit.
+	// Die Richtung wird mit dem Feld 'direction' gesendet.
+	// Die zu wiederholende Id wird mit dem Feld 'id' gesendet.
+	postMessage({
+		id: event.data.id,
+		direction: direction
+	});
+};
+
+function holdOrChangeDirection(dir) {
+	if (Math.random() &lt; 0.05) {
+		return getRandomDirection();
+	} else {
+		return dir;
+	}
+}
+
+function getRandomDirection() {
+	var randomDirection;
+	var randomNumber = Math.random();
+	if (randomNumber &lt; 0.25) {
+		randomDirection = "up";
+	} else if (randomNumber &lt; 0.5) {
+		randomDirection = "down";
+	} else if (randomNumber &lt; 0.75) {
+		randomDirection = "left";
+	} else {
+		randomDirection = "right";
+	}
+	return randomDirection;
+}
+
+
+Viel Spaß beim Programmieren!
+Stefan Trenkel
+					</code>
+				</pre>
+				</article>
+			</div>
+			<a class="button" href="game.html"><span class="button_mid">Spiel starten</span></a>
+		</div>
+		<div id="right">
+			<h2>Prizes</h2>
+			<hr width="100">
+			<section class="grey_background">
+				<section id="startUp" class="prizesHome">
+					<h3>Start Up</h3>
+					<p class="place">1st</p><p class="prize"><a target="_blank" href="">AngularJS</a></p>
+					<p class="place">2nd</p><p class="prize"><a target="_blank" href="">The Principles of Object-Orientated JavaScript</a></p>
+					<p class="place">3rd</p><p class="prize"><a target="_blank" href="">JavaScript effektiv</a></p>
+					<p class="prizeBy">by iX & dpunkt</p>
+				</section>
+				<section id="round1" class="prizesHome">
+					<h3>Round 1</h3>
+					<p class="place">1st</p><p class="prize"><a target="_blank" href="">Data Structure and Algorithms with JavaScript</a></p>
+					<p class="place">2nd</p><p class="prize"><a target="_blank" href="">JavaScript Testing with Jasmine</a></p>
+					<p class="place">3rd</p><p class="prize"><a target="_blank" href=""> 	Automate with Grunt</a></p>
+					<p class="prizeBy">by O'Reilly</p>
+				</section>
+				<section id="round2" class="prizesHome">
+					<h3>Round 2</h3>
+					<p class="place">1st</p><p class="prize"><a target="_blank" href="">Node.js</a></p>
+					<p class="place">2nd</p><p class="prize"><a target="_blank" href="">Apps mit HTML5 und CSS3</a></p>
+					<p class="place">3rd</p><p class="prize"><a target="_blank" href="">Responsive Webdesign</a></p>
+					<p class="prizeBy">by Galileo Computing</p>
+				</section>
+				<section id="final" class="prizesHome">
+					<h3>Final</h3>
+					<p class="place">1st</p><p class="prize"><a target="_blank" href="">iPad mini</a></p>
+					<p class="place">2nd</p><p class="prize"><a target="_blank" href=""> Raspberry Pi Ultimate Starter Kit</a></p>
+					<p class="place">3rd</p><p class="prize"><a target="_blank" href="">iX Jahresabo</a></p>
+					<p class="place">4th</p><p class="prize"><a target="_blank" href="">iX Jahresabo</a></p>
+					<p class="prizeBy">by team neusta & iX</p>
+				</section>
+			</section>
+		</div>
+	</section>
+</section>
+<footer id="bottom">
+	<div class="footer_wrapper">
+	<section id="sponsors">
+		<p class="prizeBy">sponsored by</p>
+		<ul>
+			<li><a target="_blank" href="http://www.team-neusta.de/"><div class="sponsorLogoNeusta sponsorLogo"></div></a></li>
+			<li><a target="_blank" href="http://www.dpunkt.de/"><div class="sponsorLogoDpunkt sponsorLogo"></div></a></li>
+			<li><a target="_blank" href="http://www.oreilly.de/"><div class="sponsorLogoOreilly sponsorLogo"></div></a></li>
+			<li><a target="_blank" href="http://www.heise.de/ix/"><div class="sponsorLogoIX sponsorLogo"></div></a></li>
+			<li><a target="_blank" href="http://www.galileocomputing.de/"><div class="sponsorLogoGalileo sponsorLogo"></div></a></li>
+		</ul>
+	</section>
+	<section id="footerLine">
+		<section class="left">
+			<p>Copyright Web Worker Contest 2014</p>
+		</section>
+		<section class="right">
+			<ul>
+				<li><a href="kontakt.html">Kontakt</a></li>
+				<li><a href="impressum.html">Impressum</a></li>
+				<li><a target="_blank" href="https://twitter.com/workercontest"><img src="images/logos/twitter.jpg" alt="WWC-Logo" /></a></li>
+			</ul>
+		</section>
+	</section>
+	</div>
+</footer>
+</body>
+</html>

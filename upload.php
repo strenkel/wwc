@@ -2,6 +2,7 @@
 <html>
 
 <?php
+	$headDataMain = 'upload/upload';
 	include 'php/head.php';
 ?>
 
@@ -31,9 +32,8 @@
 							};
 						</script>
 					</div>
-					<input type="file" class="line" id="wwc-upload-file" style="display:none;">
-					<input type="text" maxlength="50" class="line" placeholder="Your name | team" id="wwc-upload-author">
-					<input type="email" maxlength="50" class="line" placeholder="E-Mail" id="wwc-upload-email">
+					<input id="wwc-upload-author" type="text" maxlength="50" class="line" placeholder="Your name | team">
+					<input id="wwc-upload-email" type="email" maxlength="50" class="line" placeholder="E-Mail">
 					<hr>
 					<div class="participation">
 						Teilnahmebedingungen:<br>
@@ -62,7 +62,7 @@
 						<input type="checkbox" id="wwc_checkbox_termsofuse"><label class="checkbox_label" for="wwc_checkbox_termsofuse">Ja, ich möchte teilnehmen und akzeptiere die Teilnahmebedingungen.</label>
 					</div>
 					<div class="button button_small" id="wwc-upload">Upload</div>
-					<div class="message" id="wwc-upload-message">Dies ist ein Errortext</div>
+					<div class="message" id="wwc-upload-message"></div>
 				</div>
 			</section>
 		</div>

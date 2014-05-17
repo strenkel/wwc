@@ -6,14 +6,16 @@ require.config({
 });
 
 require([
-  "jquery"
-], function($) {
+  "jquery",
+  "util"
+], function($, util) {
 
   "use strict";
 
   $(document).ready(function() {
     $('#toggleHeadline').click(toggleText);
     $('#toggleIcon').click(toggleText);
+    util.markActiveHeader("#indexPhp");
   });
 
   var toggleText = function() {

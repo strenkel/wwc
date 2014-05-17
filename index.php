@@ -9,20 +9,8 @@
 </head>
 <body>
 
-<header id="topmenu">
-	<nav>
-		<ul>
-			<li class="logo"><div id="logo"><img src="images/logos/wwc_logo.jpg" alt="WWC-Logo" /></div></li>
-			<li><a href="index.html" class="active">Home</a></li>
-			<li><a href="guide.html">Guide</a></li>
-			<li><a href="game.html">Game</a></li>
-			<li><a href="upload.html">Upload</a></li>
-			<li><a href="top20.html">Top 20 & Challenger</a></li>
-			<li><a href="winner.html">Winner</a></li>
-			<li><a target="_blank" href="http://webworkercontest.net/blog/">Blog</a></li>
-		</ul>
-	</nav>
-</header>
+<?php	include 'php/header.php'; ?>
+
 <section id="page">
 	<section id="content">
 		<div id="left">

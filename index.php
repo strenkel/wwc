@@ -8,7 +8,10 @@
 
 <body>
 
-<?php	include 'php/header.php'; ?>
+<?php
+	$headerIndexIsActive="active";
+	include 'php/header.php';
+?>
 
 <section id="page">
 	<section id="content">

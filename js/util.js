@@ -8,7 +8,6 @@ define([
     $(selector).addClass("active");
   };
 
-
   return {
     markActiveHeader: markActiveHeader
   };

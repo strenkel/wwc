@@ -21,7 +21,7 @@
 			<article>
 				<p>
 					Willkommen beim <b>WEB WORKER CONTEST</b>, einem JavaScript
-					<a target="_blank" href="http://de.wikipedia.org/wiki/Programmierspiel">Programmierspiel</a>.<br>
+					<a target="_blank" href="http://de.wikipedia.org/wiki/Programmierspiel">Programmierspiel</a>.
 					Bei diesem Spiel treten jeweils zwei JavaScript-Programme gegeneinander an.
 					Sie müssen auf einer Spielfläche von 100 x 100 Felder mit einfachen Zügen (top, down, left, right) möglichst viele Felder besetzen.
 					Gewonnen hat das Programm, dass am Ende mehr Felder besetzt hat.

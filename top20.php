@@ -2,6 +2,7 @@
 <html>
 
 <?php
+	$headDataMain = 'top20/top20';
 	include 'php/head.php';
 ?>
 
@@ -53,14 +54,7 @@
 					</tr>
 				</thead>
 				<tbody id="wwc-challenger-body">
-					<tr>
-						<td>RandomWalk20percent.js</td>
-						<td>Max Muster</td>
-					</tr>
-					<tr>
-						<td>RandomWalk40percent.js</td>
-						<td>Schwester Muster</td>
-					</tr>
+					<!-- filles by javaScript -->
 				</tbody>
 			</table>
 		</div>

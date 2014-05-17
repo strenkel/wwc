@@ -145,6 +145,10 @@
       $chart[0] = $points[0];
       $chart[1] = $points[1];
     }
+
+    updateChart($id[0], $chart[0], $points[0], $points[1]);
+    updateChart($id[1], $chart[1], $points[1], $points[0]);
+
     for ($i = 0; $i < 2; $i++) {
       if ($chart[$i] != 0) {
         updateChart($id[$i], $chart[$i]);
@@ -152,8 +156,8 @@
     }
   }
 
-  function updateChart($id, $points) {
-    $sql = "UPDATE chart SET points = points + $points WHERE player = $id";
+  function updateChart($id, $points, $wins, $defeats) {
+    $sql = "UPDATE chart SET points = points + $points, wins = wins + $wins, defeats = defeats + $defeats WHERE player = $id";
     mysql_query($sql) or die(mysql_error());
   }
 
@@ -202,13 +206,15 @@
   }
 
   function getTable() {
-    $sql = "SELECT w.name, c.points FROM worker w, chart c WHERE w.Id = c.player ORDER BY c.points DESC";
+    $sql = "SELECT w.name, c.points, c.wins, c.defeats FROM worker w, chart c WHERE w.Id = c.player ORDER BY c.points DESC";
     $data = mysql_query($sql) or die(mysql_error());
     $table = array();
     while($rowData = mysql_fetch_array($data)) {
       $row = new stdClass;
       $row->name = $rowData['name'];
       $row->points = intval($rowData['points']);
+      $row->wins = intval($rowData['wins']);
+      $row->defeats = intval($rowData['defeats']);
       $table[] = $row;
     }
     return $table;
@@ -338,9 +344,12 @@
     $data = mysql_query($sql) or die(mysql_error());
     while($row = mysql_fetch_array($data)) {
       $player = $row["player"];
-      if (isWinner($player, $relegatedPlayer)) {
-        updateChart($player, -1);
+      $score = getTotalScore($player, $relegatedPlayer);
+      $points = 0;
+      if ($score[0] > $score[1]) {
+        $points = -1;
       }
+      updateChart($player, $points, -$score[0], -$score[1]);
     }
   }
 
@@ -408,7 +417,7 @@
   }
 
   function insertIntoChart($player) {
-    $sql = "INSERT INTO chart VALUES ($player, 0)";
+    $sql = "INSERT INTO chart VALUES ($player, 0, 0, 0)";
     mysql_query($sql) or die(mysql_error());
   }
 

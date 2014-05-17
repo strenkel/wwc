@@ -33,7 +33,7 @@
 						</script>
 					</div>
 					<input id="wwc-upload-author" type="text" maxlength="50" class="line" placeholder="Your name | team">
-					<input id="wwc-upload-email" type="email" maxlength="50" class="line" placeholder="E-Mail">
+					<input id="wwc-upload-email" type="email" maxlength="50" class="line" placeholder="E-mail">
 					<hr>
 					<div class="participation">
 						Teilnahmebedingungen:<br>

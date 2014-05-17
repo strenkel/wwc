@@ -51,7 +51,7 @@
 					<?php	include 'php/guideText.php'; ?>
 				</article>
 			</div>
-			<a class="button" href="game.html"><span class="button_mid">Spiel starten</span></a>
+			<a class="button" href="game.php"><span class="button_mid">Spiel starten</span></a>
 		</div>
 		<div id="right">
 			<h2>Prizes</h2>

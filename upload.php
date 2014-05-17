@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>web worker contest</title>
-	<meta name="robots" content="INDEX,FOLLOW">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" href="css/style.css">
-</head>
+
+<?php
+	include 'php/head.php';
+?>
+
 <body>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<header id="topmenu">
-	<nav>
-		<ul>
-			<li class="logo"><div id="logo"><img src="images/logos/wwc_logo.jpg" alt="WWC-Logo" /></div></li>
-			<li><a href="home.html">Home</a></li>
-			<li><a href="guide.html">Guide</a></li>
-			<li><a href="game.html">Game</a></li>
-			<li><a href="upload.html" class="active">Upload</a></li>
-			<li><a href="top20.html">Top 20 & Challenger</a></li>
-			<li><a href="winner.html">Winner</a></li>
-			<li><a target="_blank" href="http://webworkercontest.net/blog/">Blog</a></li>
-		</ul>
-	</nav>
-</header>
+
+<?php
+	$headerUploadIsActive="active";
+	include 'php/header.php';
+?>
+
 <section id="page">
 	<section id="content">
 		<div id="left">
@@ -48,18 +38,23 @@
 					<div class="participation">
 						Teilnahmebedingungen:<br>
 						<br>
-						Die Teilname am WEB WORKER CONTEST (W2C) ist kostenlos. Teilnahmeberechtigt sind
-						alle Personen und Teams. Man kann mit beliebig vielen Web Workern teilnehmen.
+						Die Teilname am WEB WORKER CONTEST (WWC) ist kostenlos. Teilnahmeberechtigt sind
+						alle Personen und Teams. Man darf pro Tag mit maximal 5 Web Workern teilnehmen.
+						Es ist untersagt, codegleiche Web Worker zweimal hoch zu laden. Dies gilt sowohl
+						für eigene als auch für fremde Web Worker. Der Web Worker Code
+						von anderen Teilnehmern darf nur dann verwendet werden, wenn der andere Teilnehmer
+						das nicht untersagt und wenn der Code signifikant verbessert wurde.
 						Für das Copyright des Web Worker Codes ist der jeweilige Autor verantwortlich.
-						Der W2C verwendet den Code ausschließlich für den Wettbewerb. Der eingereichte
-						Web Worker Code, der Name des Teilnehmers, E-Mail und Kommentar werden gespeichert.
-						Der Web Worker Code, der Name des Teilnehmer und der Kommentar können auf den Seiten des W2C
-						sowie auf Twitter und im Blog veröffentlicht werden.
+						Der WWC verwendet den Code ausschließlich für den Wettbewerb. Der eingereichte
+						Web Worker Code, der Name des Teilnehmers und seine E-Mail werden gespeichert.
+						Der Web Worker Code und der Name des Teilnehmers können auf den Seiten des WWC
+						sowie auf Twitter und im zugehörigen Blog veröffentlicht werden.
 						Die E-Mail Adresse wird nicht veröffentlicht und nicht an Dritte weitergegeben.
 						Sie wird nicht für Werbe-Zwecke verwendet.
-						Die Gewinner des Contests werden per E-Mail benachrichtigt. Teilnehmer können
-						jederzeit die Löschung ihrer Daten verlangen. Hierzu reicht eine Email an die W2C Adresse.
-						Für technische Störungen übernimmt der W2C keine Haftung.
+						Bei Verstoß gegen die Teilnahmebedingungen können Teilnehmer ohne weitere Begründung
+						vom CONTEST ausgeschlossen werden. Die Gewinner des CONTESTS werden per E-Mail benachrichtigt. Teilnehmer können
+						jederzeit die Löschung ihrer Daten verlangen. Hierzu reicht eine Email an die WWC Adresse.
+						Für technische Störungen übernimmt der WWC keine Haftung.
 						Der Rechtsweg ist ausgeschlossen.<br>
 						<br>
 					</div>
@@ -95,29 +90,8 @@
 		</div>
 	</section>
 </section>
-<footer id="bottom">
-	<section id="sponsors">
-		<p class="prizeBy">sponsored by</p>
-		<ul>
-			<li><a target="_blank" href="http://www.team-neusta.de/"><div class="sponsorLogoNeusta sponsorLogo"></div></a></li>
-			<li><a target="_blank" href="http://www.dpunkt.de/"><div class="sponsorLogoDpunkt sponsorLogo"></div></a></li>
-			<li><a target="_blank" href="http://www.oreilly.de/"><div class="sponsorLogoOreilly sponsorLogo"></div></a></li>
-			<li><a target="_blank" href="http://www.heise.de/ix/"><div class="sponsorLogoIX sponsorLogo"></div></a></li>
-			<li><a target="_blank" href="http://www.galileocomputing.de/"><div class="sponsorLogoGalileo sponsorLogo"></div></a></li>
-		</ul>
-	</section>
-	<section id="footerLine">
-		<section class="left">
-			<p>Copyright Web Worker Contest 2014</p>
-		</section>
-		<section class="right">
-			<ul>
-				<li><a href="kontakt.html">Kontakt</a></li>
-				<li><a href="impressum.html">Impressum</a></li>
-				<li><a target="_blank" href="https://twitter.com/workercontest"><img src="images/logos/twitter.jpg" alt="WWC-Logo" /></a></li>
-			</ul>
-		</section>
-	</section>
-</footer>
+
+<?php	include 'php/footer.php'; ?>
+
 </body>
 </html>

@@ -4,15 +4,16 @@
 	<title>WWC - Beta</title>
 	<meta name="robots" content="INDEX,FOLLOW">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script data-main="js/index" src="js/libs/require.js" async="true"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
 <header id="topmenu">
 	<nav>
 		<ul>
 			<li class="logo"><div id="logo"><img src="images/logos/wwc_logo.jpg" alt="WWC-Logo" /></div></li>
-			<li><a href="home.html" class="active">Home</a></li>
+			<li><a href="index.html" class="active">Home</a></li>
 			<li><a href="guide.html">Guide</a></li>
 			<li><a href="game.html">Game</a></li>
 			<li><a href="upload.html">Upload</a></li>
@@ -29,19 +30,20 @@
 			<hr width="100">
 			<article>
 				<p>
-					Willkommen beim <b>WEB WORKER CONTEST</b>, einem JavaScript <a target="_blank" href="http://de.wikipedia.org/wiki/Programmierspiel">Programmierspiel</a>.<br>
+					Willkommen beim <b>WEB WORKER CONTEST</b>, einem JavaScript
+					<a target="_blank" href="http://de.wikipedia.org/wiki/Programmierspiel">Programmierspiel</a>.<br>
 					Bei diesem Spiel treten jeweils zwei JavaScript-Programme gegeneinander an.
 					Sie müssen auf einer Spielfläche von 100 x 100 Felder mit einfachen Zügen (top, down, left, right) möglichst viele Felder besetzen.
 					Gewonnen hat das Programm, dass am Ende mehr Felder besetzt hat.
 					<br><br>
 					Realisiert wird der CONTEST auf Basis von <a target="_blank" href="http://en.wikipedia.org/wiki/Web_worker">Web Workern</a>.
-					Die JavaScript-Programme, die gegeneinander antreten, sind Web Worker.
+					Eure JavaScript-Programme, die gegeneinander antreten, sind Web Worker.
 					Der WEB WORKER CONTEST ist vielleicht das erste Programmierspiel, das mit Hilfe von Web Workern im Browser gespielt wird.
 					Die genauen Spielregeln und wie man solche Web Worker programmiert, erfahrt ihr im Guide.
 					<br><br>
 					Auf die besten Web Worker warten viele schöne Preise. Gespielt wird über 4 Runden: Start Up, Round 1, Round 2 und Final.
 					Die jeweils 3 besten Worker werden prämiert. In den ersten 3 Runden gibt es Bücher rund um JavaScript und Webentwicklung zu gewinnen.
-					Im Finale wartet ein tolles Laptop und 2 iX Jahresabos.
+					Im Finale warten ein tolles Laptop und 2 iX Jahresabos.
 					<br><br>
 					Startschuss für den CONTEST ist der 27.05.2014. Ab diesem Zeitpunkt können Web Worker hochgeladen werden. Die Start Up Sieger werden
 					am 31.05. bestimmt. Dann geht es jede Woche weiter. Am 21.06.2014 ist Finale!
@@ -54,8 +56,8 @@
 			<h2>Wie kann ich teilnehmen?</h2>
 			<hr width="100">
 			<div class="toggleBox">
-				<p class="toggleHeadline" onclick="jQuery('.toggleText').toggleClass('hidden'); if(jQuery('.toggleText').hasClass('hidden')) {jQuery('.toggleIcon').text('+')} else {jQuery('.toggleIcon').text('-')}">WEB WORKER CONTEST - Guide</p><div class="toggleIcon" onclick="jQuery('.toggleText').toggleClass('hidden'); if(jQuery('.toggleText').hasClass('hidden')) {jQuery('.toggleIcon').text('+')} else {jQuery('.toggleIcon').text('-')}">+</div>
-				<article class="toggleText hidden">
+				<p id="toggleHeadline" class="toggleHeadline">WEB WORKER CONTEST - Guide</p><div id="toggleIcon" class="toggleIcon">+</div>
+				<article id="toggleText" class="toggleText hidden">
 					<p>
 						Der Web Worker Contest ist ein JavaScript Programmierwettbewerb. Auf einer Spielfläche von 100 x 100 quadratischen Feldern treten jeweils 2 JavaScript-Programme gegeneinander an. Ziel ist es, von einem zufällig zugeteiltem Startfeld aus möglichst viele Felder der Spielfläche zu besetzen. Gewonnen hat das Programm, dass am Ende mehr Felder besetzt hat. Ein Zug besteht darin, von seinem aktuellen Feld entweder das oberer, unterer, rechte oder linke angrenzende Feld zu besetzen. Das neue Feld darf aber nur dann besetzt werden, wenn es nicht zuvor von dem gegnerischen Programm besetzt wurde. Ist ein Zug möglich (das neue Feld ist frei) wechselt die aktuelle Position auf das gewünschte Feld. Ist ein Zug nicht möglich (das Feld ist schon vom Gegner gesetzt oder man will das Spielfeld verlassen), bleibt man auf der aktuellen Position stehen. Felder, die man selber zuvor schon besetzt hat, darf man weiterhin betreten (zählen allerdings nicht doppelt). Die Programme haben keinerlei Informationen über das Spielfeld. Sie können das Spielfeld nicht sehen. Sie ziehen gewissermaßen blind. Die einzige Information, die sie erhalten (und die sie auswerten können), ist, ob ihr gewählter Zug möglich ist oder nicht. Die Programme ziehen nicht abwechselnd, sondern so schnell sie können. Es kommt also darauf an, möglichst schnell, möglichst intelligente Züge zu machen.<br>
 						<br>
@@ -118,12 +120,11 @@ function getRandomDirection() {
 	}
 	return randomDirection;
 }
+				</code>
+					</pre>
 
+					Viel Spaß beim Programmieren!
 
-Viel Spaß beim Programmieren!
-Stefan Trenkel
-					</code>
-				</pre>
 				</article>
 			</div>
 			<a class="button" href="game.html"><span class="button_mid">Spiel starten</span></a>
@@ -155,7 +156,7 @@ Stefan Trenkel
 				</section>
 				<section id="final" class="prizesHome">
 					<h3>Final | 21.06.14</h3>
-					<p class="place">1st</p><p class="prize"><a target="_blank" href="http://www.cyberport.de/acer-aspire-e1-572-34014g50mnkk-notebook-i3-4010u-matt-full-hd-windows-8-1-1C26-8X3_1688.html">Notebook Acer Aspire E1</a></p>
+					<p class="place">1st</p><p class="prize"><a target="_blank" href="http://www.team-neusta.de/" title="Ein Laptop Deiner Wahl im Wert von 500 Euro.">Ein team neusta Laptop</a></p>
 					<p class="place">2nd</p><p class="prize"><a target="_blank" href="http://shop.heise.de/ix-abo">iX Jahresabo</a></p>
 					<p class="place">3rd</p><p class="prize"><a target="_blank" href="http://shop.heise.de/ix-abo">iX Jahresabo</a></p>
 					<p class="prizeBy">by team neusta & iX</p>

@@ -2,7 +2,7 @@
 <html>
 
 <?php
-	$headDataMain = 'js/index';
+	$headDataMain = 'index';
 	include 'php/head.php';
 ?>
 

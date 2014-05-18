@@ -2,6 +2,7 @@
 <html>
 
 <?php
+	$headDataMain = 'game/game';
 	include 'php/head.php';
 ?>
 
@@ -62,40 +63,38 @@
 				<div class="label_header">Select web workers | Test your own web worker</div>
 				<div class="page-content">
 					<div class="schedule schedule_left">
-						<select class="select-player" id="wwc-select-player0">
-							<option>Random</option>
+						<select id="wwc-select-player0" class="select-player" id="wwc-select-player0">
+							<!-- filed by javascript -->
 						</select>
 						<div class="uploadContainer">
 							<div class="fileUpload button_small_grey">
 								<span>Choose File</span>
-								<input id="wwc-file0_upload" type="file" class="upload" />
+								<input id="wwc-file0" type="file" class="upload" />
 							</div>
 							<div id="uploadFile_text"></div>
 							<script>
-								document.getElementById("wwc-file0_upload").onchange = function () {
+								document.getElementById("wwc-file0").onchange = function () {
 									document.getElementById("uploadFile_text").innerHTML = this.value;
 								};
 							</script>
 						</div>
-						<input type="file" id="wwc-file0" style="display: none;">
 					</div>
 					<div class="schedule schedule_right">
-						<select class="select-player" id="wwc-select-player1">
-							<option>Local file</option>
+						<select id="wwc-select-player1" class="select-player" id="wwc-select-player1">
+							<!-- filed by javascript -->
 						</select>
 						<div class="uploadContainer">
 							<div class="fileUpload button_small_grey">
 								<span>Choose File</span>
-								<input id="wwc-file1_upload" type="file" class="upload" />
+								<input id="wwc-file1" type="file" class="upload" />
 							</div>
 							<div id="uploadFile1_text"></div>
 							<script>
-								document.getElementById("wwc-file1_upload").onchange = function () {
+								document.getElementById("wwc-file1").onchange = function () {
 									document.getElementById("uploadFile1_text").innerHTML = this.value;
 								};
 							</script>
 						</div>
-						<input type="file" id="wwc-file1"  style="display: none;">
 					</div>
 					<hr>
 					<div class="control button_small" id="wwc-refresh" style="display: inline-block;">Refresh</div>

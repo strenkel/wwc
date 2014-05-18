@@ -122,6 +122,10 @@ Jetzt müsst Ihr ihn nur noch ein wenig tunen ;-)
   - Gespielt wird auf dem jeweils aktuellen Firefox.
 </p>
 <br>
+<p>
+  - Ein Spiel dauert genau 10.000 Züge. Dabei werden die Züge der beiden Web Worker zusammengezählt.
+</p>
+<br>
 <br>
 <p>
 Viel Spaß beim Programmieren!

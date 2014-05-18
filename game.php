@@ -107,5 +107,12 @@
 
 <?php	include 'php/footer.php'; ?>
 
+<?php
+	$superUser = $_GET["superuser"];
+	if ($superUser == "true") {
+		include 'php/superUser.php';
+	}
+?>
+
 </body>
 </html>

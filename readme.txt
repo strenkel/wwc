@@ -15,3 +15,4 @@ INSTALLATION
 - achape und mysql starten
 - z.B. 'http://localhost/wwc/' in einem aktuellen Browser (ff>29, ie>11, chrome>34) aufrufen.
 - Worker aus dem Verzeichnis 'worker-examples' zum Testen hochladen.
+- Weitere Infos, insbesondere zum Spiel: www.webworkercontest.net

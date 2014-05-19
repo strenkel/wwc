@@ -108,9 +108,11 @@
 <?php	include 'php/footer.php'; ?>
 
 <?php
-	$superUser = $_GET["superuser"];
-	if ($superUser == "true") {
-		include 'php/superUser.php';
+	if (isset($_GET["superuser"])) {
+		$superUser = $_GET["superuser"];
+		if ($superUser == "true") {
+			include 'php/superUser.php';
+		}
 	}
 ?>
 

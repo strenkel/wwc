@@ -21,25 +21,14 @@
 			<table id="top20" cellspacing="5">
 				<thead>
 					<tr>
-						<th class="column rank">Ranking</th>
-						<th class="column author">Author</th>
+						<th class="column rank">#</th>
+						<th class="column author">Name</th>
 						<th class="column points">Points</th>
 						<th class="column games">Games</th>
 					</tr>
 				</thead>
 				<tbody id="wwc-table-body">
-					<tr>
-						<td>1st</td>
-						<td>Max Muster</td>
-						<td>15</td>
-						<td>100:5</td>
-					</tr>
-					<tr>
-						<td>2nd</td>
-						<td>Max Muster ist kein super langer name</td>
-						<td>15</td>
-						<td>100:5</td>
-					</tr>
+					<!-- filles by javaScript -->
 				</tbody>
 			</table>
 		</div>

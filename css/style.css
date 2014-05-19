@@ -536,23 +536,31 @@ hr {
 	padding: 0 10px 0 0;
 }
 
+.text-align-right {
+	text-align: right;
+}
+
 #left50 table th.column.rank{
-	width: 80px;
+	width: 20px;
+	text-align: right;
+	padding-right: 10px;
 }
 #left50 table th.column.author{
-	width: 350px;
+	width: 340px;
 }
 #left50 table th.column.points{
-	width: 120px;
+	width: 60px;
+	text-align: right;
 }
 #left50 table th.column.games{
-	width: 100px;
+	width: 110px;
+	text-align: right;
 }
 #right50 table th.column.name{
-	width: 350px;
+	width: 340px;
 }
 #right50 table th.column.author{
-	width: 200px;
+	width: 210px;
 }
 #wwc-winner .tableName {
 	-moz-transform: rotate(270deg);  /* FF3.5+ */

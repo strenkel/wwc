@@ -24,19 +24,21 @@ define([
   /** @private */
   Table.prototype.addRow = function(data) {
     var tr = document.createElement("tr");
-    tr.appendChild(this.createTd(this.position + "."));
+    tr.appendChild(this.createTd(this.position + ".", true));
     tr.appendChild(this.createTd(data.name));
-    tr.appendChild(this.createTd(data.points));
-    tr.appendChild(this.createTd(data.wins));
-    tr.appendChild(this.createTd(data.defeats));
+    tr.appendChild(this.createTd(data.points, true));
+    tr.appendChild(this.createTd(data.wins + " : " + data.defeats, true));
     this.tableBody.appendChild(tr);
     this.position++;
   };
 
   /** @private */
-  Table.prototype.createTd = function(content) {
+  Table.prototype.createTd = function(content, alignRight) {
     var td = document.createElement("td");
     td.innerHTML = content;
+    if (alignRight) {
+      td.className = "text-align-right";
+    }
     return td;
   };
 

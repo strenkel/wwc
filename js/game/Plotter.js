@@ -3,7 +3,7 @@ define(["jquery"], function ($) {
   "use strict";
 
   var MAX_SPEED = 20000;
-  
+
   /**
    * @param drawingArea {DrawingArea}
    * @param score {Score}
@@ -17,8 +17,8 @@ define(["jquery"], function ($) {
 
     // private members
     this.onStopListeners = $.Callbacks();
-    this.bodyColors = ["#fa0a03", "#1900fe"];
-    this.headColors = ["#500000", "#00ff00"];
+    this.bodyColors = ["#68a289", "#a46868"];
+    this.headColors = ["#005000", "#500000"];
     this.speed = 5;
     this.isPlotting = false;
   };
@@ -113,7 +113,7 @@ define(["jquery"], function ($) {
       this.score.increase(move.player);
     }
   };
-  
+
   /** @private */
   Plotter.prototype.plotMove = function(move) {
     var player = move.player;

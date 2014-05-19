@@ -60,16 +60,21 @@ define(["jquery"], function ($) {
 
   /** @private */
   Gear.prototype.step = function() {
-    this.onStepListeners.fire();
+    if (this.playIsShown) {
+      this.onStepListeners.fire();
+    }
   };
 
   /** @private */
   Gear.prototype.reset = function() {
-    this.onResetListeners.fire();
+    if (this.playIsShown) {
+      this.onResetListeners.fire();
+    }
   };
 
   /** @private */
   Gear.prototype.showPlay = function() {
+    this.playIsShown = true;
     this.showPlayElement();
     this.showStepElement();
     this.showResetElement();
@@ -78,6 +83,7 @@ define(["jquery"], function ($) {
 
   /** @private */
   Gear.prototype.showStop = function() {
+    this.playIsShown = false;
     this.hidePlayElement();
     this.hideStepElement();
     this.hideResetElement();
@@ -100,28 +106,28 @@ define(["jquery"], function ($) {
   };
 
   /** @private */
-  Gear.prototype.showResetElement = function() {
-    show(this.resetElement);
-  };
-
-  /** @private */
   Gear.prototype.hideStopElement = function() {
     hide(this.stopElement);
   };
 
- /** @private */
-  Gear.prototype.showStepElement = function() {
-    show(this.stepElement);
-  };
-
   /** @private */
-  Gear.prototype.hideStepElement = function() {
-    hide(this.stepElement);
+  Gear.prototype.showResetElement = function() {
+    enable(this.resetElement);
   };
 
   /** @private */
   Gear.prototype.hideResetElement = function() {
-    hide(this.resetElement);
+    disable(this.resetElement);
+  };
+
+ /** @private */
+  Gear.prototype.showStepElement = function() {
+    enable(this.stepElement);
+  };
+
+  /** @private */
+  Gear.prototype.hideStepElement = function() {
+    disable(this.stepElement);
   };
 
   var show = function(elm) {
@@ -130,6 +136,14 @@ define(["jquery"], function ($) {
 
   var hide = function(elm) {
     elm.style.display = "none";
+  };
+
+  var disable = function(elm) {
+    elm.classList.add("disabled");
+  };
+
+  var enable = function(elm) {
+    elm.classList.remove("disabled");
   };
 
   return Gear;

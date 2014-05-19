@@ -21,6 +21,7 @@ define(["jquery"], function ($) {
     this.headColors = ["#005000", "#500000"];
     this.speed = 5;
     this.isPlotting = false;
+    this.doPlot = true;
   };
 
   /**

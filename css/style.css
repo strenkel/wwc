@@ -274,7 +274,7 @@ hr {
 	cursor: pointer;
 }
 
-.button_mid:hover {
+.button_mid:hover:not(.disabled) {
 	background: rgb(88,77,109); /* Old browsers */
 	background: -moz-linear-gradient(top,  rgba(88,77,109,1) 0%, rgba(88,77,109,1) 50%, rgba(81,65,112,1) 51%, rgba(81,65,112,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(88,77,109,1)), color-stop(50%,rgba(88,77,109,1)), color-stop(51%,rgba(81,65,112,1)), color-stop(100%,rgba(81,65,112,1))); /* Chrome,Safari4+ */
@@ -286,6 +286,10 @@ hr {
 	padding: 20px 40px;
 	color: white;
 	cursor: pointer;
+}
+
+.button_mid.disabled {
+	opacity: 0.3;
 }
 
 .button_small {
@@ -799,6 +803,7 @@ hr {
 
 #page.gamePage .button_mid {
 	padding: 20px 85px;
+	width: 40px;
 }
 
 /*

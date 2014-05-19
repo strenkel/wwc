@@ -53,8 +53,8 @@
 					</div>
 				</div>
 				<div id="controls">
-					<div class="control button_mid" id="wwc-stop" style="display: none;">Stop</div>
 					<div class="control button_mid" id="wwc-reset" style="display: inline-block;">Next</div>
+					<div class="control button_mid" id="wwc-stop" style="display: none;">Stop</div>
 					<div class="control button_mid" id="wwc-play" style="display: inline-block;">Play</div>
 					<div class="control button_mid" id="wwc-step" style="display: inline-block;">Step</div>
 				</div>

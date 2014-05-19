@@ -13,6 +13,7 @@ define(["jquery"], function ($) {
     this.stopElement = c.stopElement;
     this.stepElement = c.stepElement;
     this.resetElement = c.resetElement;
+    this.refreshElement = c.refreshElement;
 
     // init listeners
     this.onPlayListeners = $.Callbacks();
@@ -28,6 +29,7 @@ define(["jquery"], function ($) {
     this.stopElement.onclick = this.stop.bind(this);
     this.stepElement.onclick = this.step.bind(this);
     this.resetElement.onclick = this.reset.bind(this);
+    this.refreshElement.onclick = this.reset.bind(this);
   };
 
   Gear.prototype.addOnPlayListener = function(callback) {

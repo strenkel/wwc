@@ -91,7 +91,8 @@ require([
       playElement: document.getElementById("wwc-play"),
       stopElement: document.getElementById("wwc-stop"),
       stepElement: document.getElementById("wwc-step"),
-      resetElement: document.getElementById("wwc-reset")
+      resetElement: document.getElementById("wwc-reset"),
+      refreshElement: document.getElementById("wwc-refresh")
     });
 
     gear.addOnPlayListener(gameController.play.bind(gameController));

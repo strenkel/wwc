@@ -25,7 +25,7 @@
 				<div id="result">
 					<div class="color-player0 new-line">
 						<div class="playerLine">
-							<div class="color_player_0"></div><div class="line name" id="wwc-name-player0">RandomWalk10Percent.js</div>
+							<div class="color_player_0"></div><div class="line name" id="wwc-name-player0"></div>
 						</div>
 						<div class="playerLine">
 							<div class="line label">Punkte:</div><div class="line score" id="wwc-score-player0">0</div>
@@ -34,12 +34,12 @@
 							<div class="line label">Gewonnen:</div><div class="line points" id="wwc-points-player0">0</div>
 						</div>
 						<div class="playerLine">
-							<div class="line label author">Author:</div><div class="line author" id="wwc-author-player0">Moritz</div>
+							<div class="line label author">Author:</div><div class="line author" id="wwc-author-player0"></div>
 						</div>
 					</div>
 					<div class="color-player1 new-line">
 						<div class="playerLine">
-							<div class="color_player_1"></div><div class="line name" id="wwc-name-player1">RandomWalk.js</div>
+							<div class="color_player_1"></div><div class="line name" id="wwc-name-player1"></div>
 						</div>
 						<div class="playerLine">
 							<div class="line label">Punkte:</div><div class="line score" id="wwc-score-player1">0</div>
@@ -48,7 +48,7 @@
 							<div class="line label">Gewonnen:</div><div class="line points" id="wwc-points-player1">0</div>
 						</div>
 						<div class="playerLine">
-							<div class="line label author">Author:</div><div class="line author" id="wwc-author-player1">Max</div>
+							<div class="line label author">Author:</div><div class="line author" id="wwc-author-player1"></div>
 						</div>
 					</div>
 				</div>

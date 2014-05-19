@@ -80,7 +80,6 @@ require([
 
     var game = new Game(field);
     var scheduler = new Scheduler(scheduleSelect);
-
     var gameController = new GameController({
       game: game,
       plotter: plotter,

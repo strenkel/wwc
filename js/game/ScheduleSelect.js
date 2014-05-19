@@ -25,7 +25,6 @@ define([
     this.select0LocalFileIndex = 1;
     this.select1LocalFileIndex = 0;
 
-
     // --constructor code --
 
     this.fillSelects();
@@ -70,11 +69,9 @@ define([
 
   /** @private */
   ScheduleSelect.prototype.fillSelects = function() {
-
     this.select0.add(new Option(ScheduleSelectOptions.TOP_DOWN));
     this.select0.add(new Option(ScheduleSelectOptions.LOCAL_FILE));
     this.select1.add(new Option(ScheduleSelectOptions.LOCAL_FILE));
-
     var _this = this;
     Ajax.getWorkerNamesOrderedByPosition().done(function(workerNames) {
       workerNames.forEach(function(name) {

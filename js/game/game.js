@@ -28,7 +28,9 @@ require([
       select0: document.getElementById("wwc-select-player0"),
       select1: document.getElementById("wwc-select-player1"),
       file0: document.getElementById("wwc-file0"),
-      file1: document.getElementById("wwc-file1")
+      file1: document.getElementById("wwc-file1"),
+      fileRoot0: document.getElementById("uploadContainer0"),
+      fileRoot1: document.getElementById("uploadContainer1")
     });
 
     var superUser = new SuperUser({

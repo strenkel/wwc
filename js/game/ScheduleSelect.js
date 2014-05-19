@@ -19,6 +19,8 @@ define([
     this.select1 = c.select1;
     this.file0 = c.file0;
     this.file1 = c.file1;
+    this.fileRoot0 = c.fileRoot0;
+    this.fileRoot1 = c.fileRoot1;
 
     this.select0LocalFileIndex = 1;
     this.select1LocalFileIndex = 0;
@@ -92,19 +94,19 @@ define([
   ScheduleSelect.prototype.fixControlState = function() {
     if (this.schemeIsSelected() ) {
       hideAndDisable(this.select1);
-      hideAndDisable(this.file0);
-      hideAndDisable(this.file1);
+      hideAndDisable(this.fileRoot0, this.file0);
+      hideAndDisable(this.fileRoot1, this.file1);
     } else {
       showAndEnable(this.select1);
       if (this.localFileIsSelectedBySelect0()) {
-        showAndEnable(this.file0);
+        showAndEnable(this.fileRoot0, this.file0);
       } else {
-        hideAndDisable(this.file0);
+        hideAndDisable(this.fileRoot0, this.file0);
       }
       if (this.localFileIsSelectedBySelect1()) {
-        showAndEnable(this.file1);
+        showAndEnable(this.fileRoot1, this.file1);
       } else {
-        hideAndDisable(this.file1);
+        hideAndDisable(this.fileRoot1, this.file1);
       }
     }
   };
@@ -132,14 +134,22 @@ define([
     elm.disabled = true;
   };
 
-  var hideAndDisable = function(elm) {
-    disable(elm);
-    elm.style.visibility = "hidden";
+  var hideAndDisable = function(elm1, elm2) {
+    elm1.style.visibility = "hidden";
+    if (elm2) {
+      disable(elm2);
+    } else {
+      disable(elm1);
+    }
   };
 
-  var showAndEnable = function(elm) {
-    enable(elm);
-    elm.style.visibility = "visible";
+  var showAndEnable = function(elm1, elm2) {
+    elm1.style.visibility = "visible";
+    if (elm2) {
+      enable(elm2);
+    } else {
+      enable(elm1);
+    }
   };
 
 

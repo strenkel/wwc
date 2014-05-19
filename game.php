@@ -66,7 +66,7 @@
 						<select id="wwc-select-player0" class="select-player" id="wwc-select-player0">
 							<!-- filed by javascript -->
 						</select>
-						<div class="uploadContainer">
+						<div id="uploadContainer0" class="uploadContainer">
 							<div class="fileUpload button_small_grey">
 								<span>Choose File</span>
 								<input id="wwc-file0" type="file" class="upload" />
@@ -83,7 +83,7 @@
 						<select id="wwc-select-player1" class="select-player" id="wwc-select-player1">
 							<!-- filed by javascript -->
 						</select>
-						<div class="uploadContainer">
+						<div id="uploadContainer1" class="uploadContainer">
 							<div class="fileUpload button_small_grey">
 								<span>Choose File</span>
 								<input id="wwc-file1" type="file" class="upload" />

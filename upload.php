@@ -71,21 +71,21 @@
 			<hr width="100">
 				<section id="workerPlace1" class="workerTop3">
 					<h3 class="place">1.</h3>
-					<h3 id="workerPlace1name">RandomWalk10Percent.js</h3>
-					<p class="autor">Author:</p><p class="autorName" id="workerPlace1Author">Max Muster</p>
-					<p class="points">Points:</p><p class="pointsGotten" id="workerPlace1Points">54321</p>
+					<h3 id="workerPlace1name"></h3>
+					<p class="autor">Author:</p><p class="autorName" id="workerPlace1Author"></p>
+					<p class="points">Points:</p><p class="pointsGotten" id="workerPlace1Points"></p>
 				</section>
 				<section id="workerPlace2" class="workerTop3">
 					<h3 class="place">2.</h3>
-					<h3 id="workerPlace2name">Start Up</h3>
-					<p class="autor">Author:</p><p class="autorName" id="workerPlace2Author">Peter Lustig</p>
-					<p class="points">Points:</p><p class="pointsGotten" id="workerPlace2Points">11223</p>
+					<h3 id="workerPlace2name"></h3>
+					<p class="autor">Author:</p><p class="autorName" id="workerPlace2Author"></p>
+					<p class="points">Points:</p><p class="pointsGotten" id="workerPlace2Points"></p>
 				</section>
 				<section id="workerPlace3" class="workerTop3">
 					<h3 class="place">3.</h3>
-					<h3 id="workerPlace3name">Start Up</h3>
-					<p class="autor">Author:</p><p class="autorName" id="workerPlace3Author">Nikolaus</p>
-					<p class="points">Points:</p><p class="pointsGotten" id="workerPlace3Points">12345</p>
+					<h3 id="workerPlace3name"></h3>
+					<p class="autor">Author:</p><p class="autorName" id="workerPlace3Author"></p>
+					<p class="points">Points:</p><p class="pointsGotten" id="workerPlace3Points"></p>
 				</section>
 		</div>
 	</section>

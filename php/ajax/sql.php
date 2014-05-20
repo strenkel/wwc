@@ -206,12 +206,13 @@
   }
 
   function getTable() {
-    $sql = "SELECT w.name, c.points, c.wins, c.defeats FROM worker w, chart c WHERE w.Id = c.player ORDER BY c.points DESC";
+    $sql = "SELECT w.name, w.author, c.points, c.wins, c.defeats FROM worker w, chart c WHERE w.Id = c.player ORDER BY c.points DESC";
     $data = mysql_query($sql) or die(mysql_error());
     $table = array();
     while($rowData = mysql_fetch_array($data)) {
       $row = new stdClass;
       $row->name = $rowData['name'];
+      $row->author = $rowData['author'];
       $row->points = intval($rowData['points']);
       $row->wins = intval($rowData['wins']);
       $row->defeats = intval($rowData['defeats']);

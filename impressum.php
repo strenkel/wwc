@@ -24,6 +24,8 @@
 				D-28205 Bremen<br>
 				info@webworkercontest.net
 				<br><br><br>
+				Design und Umsetzung: <a target="_blank" href="http://www.team-neusta.de">team neusta</a>
+				<br><br><br>
 				<u>Haftungsausschluss</u>
 				<br><br>
 				Der Autor übernimmt keinerlei Gewähr für die Aktualität, Richtigkeit und Vollständigkeit der bereitgestellten Informationen und Programme
@@ -45,14 +47,28 @@
 				solcherart dargebotener Informationen entstehen, haftet allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige,
 				der über Links auf die jeweilige Veröffentlichung lediglich verweist.
 				<br><br>
+				Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu
+				beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente,
+				Videosequenzen und Texte zurückzugreifen. Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen
+				unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer.
+				Allein aufgrund der bloßen Nennung ist nicht der Schluss zu ziehen, dass Markenzeichen nicht durch Rechte Dritter geschützt sind!
+				Die vom Author erstellte Programme unterliegen der <a target="_blank" href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.
+				Die Copyright-Bestimmungen der Web Worker Programme liegen in der Verantwortung der jeweiligen Autoren.
+				<br><br>
+				Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder geschäftlicher Daten (Emailadressen, Namen, Anschriften) besteht,
+				so erfolgt die Preisgabe dieser Daten seitens des Nutzers auf ausdrücklich freiwilliger Basis. Die Nutzung der im Rahmen des Impressums oder
+				vergleichbarer Angaben veröffentlichten Kontaktdaten wie Postanschriften, Telefon- und
+				Faxnummern sowie Emailadressen durch Dritte zur Übersendung von nicht ausdrücklich angeforderten Informationen ist nicht gestattet.
+				Rechtliche Schritte gegen die Versender von sogenannten Spam-Mails bei Verstössen gegen dieses Verbot sind ausdrücklich vorbehalten.
+				Der WEB WORKER CONTEST speichert automatisch in seinen Server Log Files Informationen, die Ihr Browser an uns übermittelt. Dies sind:
+				Browsertyp/ -version, verwendetes Betriebssystem, Hostname des zugreifenden Rechners (IP Adresse), Datum und Uhrzeit der Serveranfrage.
+				Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Daten werden zudem in regelmäßigen Abständen gelöscht.
+				<br><br>
 				Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile
 				oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten,
 				bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.
-				<br><br><br>
-				<u>Lizenz</u>
 				<br><br>
-				Die vom Author erstellte Programme unterliegen der <a target="_blank" href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.
-				Die Copyright-Bestimmungen der Web Worker Programme liegen in der Verantwortung der jeweiligen Autoren.
+				
 			</p>
 		</article>
 	</section>

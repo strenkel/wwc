@@ -1,5 +1,5 @@
 <head>
-	<title>WWC - Beta</title>
+	<title>WWC</title>
 	<meta name="robots" content="INDEX,FOLLOW">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -13,7 +13,7 @@
 	</script>
 
 	<?php
-    if ($headDataMain) {
+    if (isset($headDataMain)) {
       echo "<script data-main='$headDataMain' src='js/libs/require.js' async='true'></script>";
     }
   ?>

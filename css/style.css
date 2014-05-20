@@ -717,7 +717,7 @@ hr {
 	display: inline-block;
 	width: 300px;
 	height: 39px;
-	padding: 6px;
+	padding: 10px;
 	float: left;
 }
 
@@ -816,13 +816,13 @@ hr {
 
 #page.gamePage #right60 hr {
 	box-shadow: none;
-	margin: 18px 0;
+	margin: 16px 0;
 	background-color: white;
 	border-color: white;
 }
 
-#page.gamePage #controls .control {
-	margin: 0 5px;
+#page.gamePage #controls #wwc-play,  #page.gamePage #controls #wwc-stop {
+	margin: 0 24px;
 }
 
 .color_player_0,
@@ -955,7 +955,6 @@ hr {
 	width: 245px;
 }
 
-
 #footerLine {
 	background-color: #32363C;
 	color: #FFFFFF;
@@ -964,14 +963,12 @@ hr {
 	width: 1250px;
 }
 
-
 #footerLine .left {
 	display: inline-block;
 	float: left;
 	line-height: 40px;
 	width: 300px;
 }
-
 
 #footerLine .right {
 	float: left;
@@ -998,9 +995,8 @@ hr {
 
 li.logo {
 	height: 5px !important;
-	width: 120px !important;
+	width: 130px !important;
 }
-
 
 #sponsors {
 	background-color: #F7F7F7;

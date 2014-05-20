@@ -2,7 +2,7 @@
 <html>
 
 <?php
-	$headDataMain = 'game/game';
+	$headDataMain = 'game/gameInit';
 	include 'php/head.php';
 ?>
 

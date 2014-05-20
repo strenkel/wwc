@@ -290,6 +290,7 @@ hr {
 
 .button_mid.disabled {
 	opacity: 0.3;
+	cursor: default;
 }
 
 .button_small {

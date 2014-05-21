@@ -113,14 +113,11 @@ Jetzt müsst ihr ihn nur noch ein wenig tunen ;-)
 </p>
 <br>
 <p>
-  Um sicherzustellen, dass die Web Worker zum Start etwa gleich Anfangsbedingungen besitzen, werden die Startpunkt in schräg gegenüberliegende
-  Teil-Quadrate gelost. Startet z.B. der erste Web Worker im linken, oberen Teilquadrat (Felder 1-50 horizontal und vertical), so
-  wird der zweite Web Worker in das rechte, untere Teilquadrat gelost (Felder 51-100 horizontal und vertical). Die Verteilung
-  innerhalb der Teil-Qudrate ist gleichverteilt.
+  Die Verteilung der Startpunkt auf dem Spielfeld ist gleichverteilt.
 </p>
 <br>
 <p>
-  Gespielt wird auf dem jeweils aktuellen Firefox.
+  Der CONTEST ist für die jeweils aktuellen Browser (Firefox 29, Chrome 35, IE 11) ausgelegt. Die Top 20 werden auf dem aktuellen Firefox ausgespielt.
 </p>
 <br>
 <p>

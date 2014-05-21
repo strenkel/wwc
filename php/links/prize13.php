@@ -1,0 +1,1 @@
+<a target="_blank" href="http://www.dpunkt.de/buecher/4690/the-principles-of-object-oriented-javascript.html">The Principles of Object-Orientated JavaScript</a>

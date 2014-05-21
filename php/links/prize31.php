@@ -1,0 +1,1 @@
+<a target="_blank" href="http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-3429">Responsive Webdesign</a>

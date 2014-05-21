@@ -1,0 +1,1 @@
+<a target="_blank" href="http://www.dpunkt.de/buecher/4489/angularjs.html">AngularJS</a>

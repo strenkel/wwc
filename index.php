@@ -55,30 +55,30 @@
 			<section class="grey_background">
 				<section id="startUp" class="prizesHome">
 					<h3>Start Up | 31.05.14</h3>
-					<p class="place">1st</p><p class="prize"><a target="_blank" href="http://www.dpunkt.de/buecher/4489/angularjs.html">AngularJS</a></p>
-					<p class="place">2nd</p><p class="prize"><a target="_blank" href="http://www.dpunkt.de/buecher/4606/javascript-effektiv.html">JavaScript effektiv</a></p>
-					<p class="place">3rd</p><p class="prize"><a target="_blank" href="http://www.dpunkt.de/buecher/4690/the-principles-of-object-oriented-javascript.html">The Principles of Object-Orientated JavaScript</a></p>
+					<p class="place">1st</p><p class="prize"><?php include 'php/links/prize11.php'; ?></p>
+					<p class="place">2nd</p><p class="prize"><?php include 'php/links/prize12.php'; ?></p>
+					<p class="place">3rd</p><p class="prize"><?php include 'php/links/prize13.php'; ?></p>
 					<p class="prizeBy">by dpunkt.verlag</p>
 				</section>
 				<section id="round1" class="prizesHome">
 					<h3>Round 1 | 07.06.14</h3>
-					<p class="place">1st</p><p class="prize"><a target="_blank" href="http://www.oreilly.de/catalog/9781449328252/">Backbone.js Applications</a></p>
-					<p class="place">2nd</p><p class="prize"><a target="_blank" href="http://www.oreilly.de/catalog/9781449360726/">Functional JavaScript </a></p>
-					<p class="place">3rd</p><p class="prize"><a target="_blank" href="http://www.oreilly.de/catalog/9781449356378/">JavaScript Testing with Jasmine</a></p>
+					<p class="place">1st</p><p class="prize"><?php include 'php/links/prize21.php'; ?></p>
+					<p class="place">2nd</p><p class="prize"><?php include 'php/links/prize22.php'; ?></p>
+					<p class="place">3rd</p><p class="prize"><?php include 'php/links/prize23.php'; ?></p>
 					<p class="prizeBy">by O'Reilly</p>
 				</section>
 				<section id="round2" class="prizesHome">
 					<h3>Round 2 | 14.06.14</h3>
-					<p class="place">1st</p><p class="prize"><a target="_blank" href="http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-3429">Responsive Webdesign</a></p>
-					<p class="place">2nd</p><p class="prize"><a target="_blank" href="http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-3319">Node.js</a></p>
-					<p class="place">3rd</p><p class="prize"><a target="_blank" href="http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-3330">Apps mit HTML5 und CSS3</a></p>
+					<p class="place">1st</p><p class="prize"><?php include 'php/links/prize31.php'; ?></p>
+					<p class="place">2nd</p><p class="prize"><?php include 'php/links/prize32.php'; ?></p>
+					<p class="place">3rd</p><p class="prize"><?php include 'php/links/prize33.php'; ?></p>
 					<p class="prizeBy">by Galileo Computing</p>
 				</section>
 				<section id="final" class="prizesHome">
 					<h3>Final | 21.06.14</h3>
-					<p class="place">1st</p><p class="prize"><a target="_blank" href="http://www.team-neusta.de/" title="Ein Laptop Deiner Wahl im Wert von 500 Euro.">Ein team neusta Laptop</a></p>
-					<p class="place">2nd</p><p class="prize"><a target="_blank" href="http://shop.heise.de/ix-abo">iX Jahresabo</a></p>
-					<p class="place">3rd</p><p class="prize"><a target="_blank" href="http://shop.heise.de/ix-abo">iX Jahresabo</a></p>
+					<p class="place">1st</p><p class="prize"><?php include 'php/links/prize41.php'; ?></p>
+					<p class="place">2nd</p><p class="prize"><?php include 'php/links/prize42.php'; ?></p>
+					<p class="place">3rd</p><p class="prize"><?php include 'php/links/prize42.php'; ?></p>
 					<p class="prizeBy">by team neusta & iX</p>
 				</section>
 			</section>

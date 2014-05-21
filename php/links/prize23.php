@@ -1,0 +1,1 @@
+<a target="_blank" href="http://www.oreilly.de/catalog/9781449356378/">JavaScript Testing with Jasmine</a>

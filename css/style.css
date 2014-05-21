@@ -637,7 +637,7 @@ hr {
 	width: 120px;
 }
 #page.winnerPage .column.winner {
-	width: 120px;
+	width: 250px;
 }
 #page.winnerPage .column.price {
 	width: 400px;
@@ -652,8 +652,8 @@ hr {
 #page.winnerPage #wwc-winner-final.round {
 	height: 155px;
 }
-#wwc-winner-final {
-	color: white;
+#wwc-winner-final, #wwc-winner-final a {
+	color: white ;
 }
 #wwc-winner-final table {
 	background-color: #7c68a3;

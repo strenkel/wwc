@@ -35,21 +35,21 @@
 					<td>1st</td>
 					<td>31.05.14</td>
 					<td></td>
-					<td></td>
+					<td><?php include 'php/links/prize11.php'; ?></td>
 					<td>dpunkt.verlag</td>
 				</tr>
 				<tr>
 					<td>2nd</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><?php include 'php/links/prize12.php'; ?></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>3rd</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><?php include 'php/links/prize13.php'; ?></td>
 					<td></td>
 				</tr>
 				</tbody>
@@ -74,21 +74,21 @@
 					<td>1st</td>
 					<td>07.06.14</td>
 					<td></td>
-					<td></td>
+					<td><?php include 'php/links/prize21.php'; ?></td>
 					<td>O'Reilly</td>
 				</tr>
 				<tr>
 					<td>2nd</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><?php include 'php/links/prize22.php'; ?></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>3rd</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><?php include 'php/links/prize23.php'; ?></td>
 					<td></td>
 				</tr>
 				</tbody>
@@ -113,21 +113,21 @@
 					<td>1st</td>
 					<td>14.06.14</td>
 					<td></td>
-					<td></td>
+					<td><?php include 'php/links/prize31.php'; ?></td>
 					<td>Galileo Computing</td>
 				</tr>
 				<tr>
 					<td>2nd</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><?php include 'php/links/prize32.php'; ?></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>3rd</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><?php include 'php/links/prize33.php'; ?></td>
 					<td></td>
 				</tr>
 				</tbody>
@@ -153,22 +153,22 @@
 						<td>1st</td>
 						<td>21.06.14</td>
 						<td></td>
-						<td></td>
+						<td><?php include 'php/links/prize41.php'; ?></td>
 						<td>team neusta</td>
 					</tr>
 					<tr>
 						<td>2nd</td>
 						<td></td>
 						<td></td>
-						<td></td>
+						<td><?php include 'php/links/prize42.php'; ?></td>
 						<td>iX</td>
 					</tr>
 					<tr>
 						<td>3rd</td>
 						<td></td>
 						<td></td>
+						<td><?php include 'php/links/prize42.php'; ?></td>
 						<td></td>
-						<td>iX</td>
 					</tr>
 					</tbody>
 				</table>

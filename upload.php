@@ -40,7 +40,7 @@
 						<br>
 						Die Teilname am WEB WORKER CONTEST (WWC) ist kostenlos. Mitmachen können
 						alle Personen und Teams. Man darf pro Tag mit maximal fünf Web Workern teilnehmen.
-						Es ist untersagt, codegleiche Web Worker zweimal hoch zu laden. Dies gilt sowohl
+						Es ist untersagt, codegleiche Web Worker zweimal hochzuladen. Dies gilt sowohl
 						für eigene, als auch für fremde Web Worker. Der Web Worker-Code
 						von anderen Teilnehmern darf nur dann verwendet werden, wenn der andere dies nicht
 						untersagt und der Code signifikant verbessert wurde.

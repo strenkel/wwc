@@ -60,7 +60,7 @@
 				vergleichbarer Angaben veröffentlichten Kontaktdaten wie Postanschriften, Telefon- und
 				Faxnummern sowie Emailadressen durch Dritte zur Übersendung von nicht ausdrücklich angeforderten Informationen ist nicht gestattet.
 				Rechtliche Schritte gegen die Versender von sogenannten Spam-Mails bei Verstössen gegen dieses Verbot sind ausdrücklich vorbehalten.
-				Der WEB WORKER CONTEST speichert automatisch in seinen Server Log Files Informationen, die Ihr Browser an uns übermittelt. Dies sind:
+				Der WEB WORKER CONTEST speichert automatisch in seinen Server Log Files Informationen, die ihr Browser an uns übermittelt. Dies sind:
 				Browsertyp/ -version, verwendetes Betriebssystem, Hostname des zugreifenden Rechners (IP Adresse), Datum und Uhrzeit der Serveranfrage.
 				Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Daten werden zudem in regelmäßigen Abständen gelöscht.
 				<br><br>
@@ -68,7 +68,7 @@
 				oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten,
 				bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.
 				<br><br>
-				
+
 			</p>
 		</article>
 	</section>

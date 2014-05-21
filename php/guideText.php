@@ -1,9 +1,10 @@
 <p>
-  Der Web Worker Contest ist ein JavaScript Programmierspiel. Auf einer Spielfläche von 100 x 100 quadratischen Feldern treten
+  Der Web Worker Contest ist ein JavaScript-<a target="_blank" href="http://de.wikipedia.org/wiki/Programmierspiel">Programmierspiel</a>.
+  Auf einer Spielfläche von 100 x 100 quadratischen Feldern treten
   jeweils zwei JavaScript-Programme gegeneinander an. Ziel ist es, von einem zufällig zugeteiltem Startpunkt aus möglichst viele
   Felder der Spielfläche zu besetzen. Gewonnen hat das Programm, das am Ende mehr Felder besetzt. Ein Zug besteht darin,
   von seinem aktuellen Feld entweder das oberer, unterer, rechte oder linke angrenzende Feld zu besetzen. Das neue Feld darf aber
-  nur dann besetzt werden, wenn es nicht zuvor von dem gegnerischen Programm besetzt wurde. Ist ein Zug möglich (das neue Feld ist frei)
+  nur dann besetzt werden, wenn es nicht zuvor von dem gegnerischen Programm besetzt wurde. Ist ein Zug möglich (das neue Feld ist frei),
   wechselt die aktuelle Position auf das gewünschte Feld. Ist ein Zug nicht möglich (das Feld ist schon vom Gegner gesetzt oder
   man will das Spielfeld verlassen), bleibt man auf der aktuellen Position stehen. Felder, die man selber zuvor schon besetzt hat,
   darf man weiterhin betreten (zählen allerdings nicht doppelt). Die Programme haben keinerlei Informationen über das Spielfeld.
@@ -14,7 +15,7 @@
 <br>
 <p>
   Realisiert wird der Wettbewerb mit Hilfe von <a target="_blank" href="http://en.wikipedia.org/wiki/Web_worker">Web Workern</a>.
-  Dabei handelt es sich JavaScript Programme in einer separaten Datei, die parallel im Hintergrund laufen. Dadurch ist es möglich,
+  Dabei handelt es sich JavaScript-Programme in einer separaten Datei, die parallel im Hintergrund laufen. Dadurch ist es möglich,
   dass die Web Worker gleichzeitig spielen. Jeweils zwei treten gegeneinander an. Wer dabei gegeneinander spielt, stellt man auf
   der Game-Seite unter "Select web workers | Test your own web worker" ein.
   Mit der Option "Local file" kann man seinen eigenen Web Worker gegen einen beliebig anderen antreten lassen.
@@ -102,8 +103,8 @@ function getRandomDirection() {
   </pre>
 </p>
 <p>
-Kopiert Ihr diesen Code in eine lokale JavaScript-Datei, habt Ihr Euren ersten Web Worker erstellt.<br>
-Jetzt müsst Ihr ihn nur noch ein wenig tunen ;-)
+Kopiert ihr diesen Code in eine lokale JavaScript-Datei, habt ihr Euren ersten Web Worker erstellt.<br>
+Jetzt müsst ihr ihn nur noch ein wenig tunen ;-)
 </p>
 <br>
 <br>

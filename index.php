@@ -62,9 +62,9 @@
 				</section>
 				<section id="round1" class="prizesHome">
 					<h3>Round 1 | 07.06.14</h3>
-					<p class="place">1st</p><p class="prize"><a target="_blank" href="http://www.oreilly.de/catalog/search.html?SESSION=ba100000_83c4102408e338dc;DUE=index;NO=9">Backbone.js Applications</a></p>
-					<p class="place">2nd</p><p class="prize"><a target="_blank" href="http://www.oreilly.de/catalog/search.html?SESSION=ba100000_83c4102408e338dc;DUE=index;NO=15">Functional JavaScript </a></p>
-					<p class="place">3rd</p><p class="prize"><a target="_blank" href="http://www.oreilly.de/catalog/search.html?SESSION=ba100000_83c4102408e338dc;DUE=index;NO=28">JavaScript Testing with Jasmine</a></p>
+					<p class="place">1st</p><p class="prize"><a target="_blank" href="http://www.oreilly.de/catalog/9781449328252/">Backbone.js Applications</a></p>
+					<p class="place">2nd</p><p class="prize"><a target="_blank" href="http://www.oreilly.de/catalog/9781449360726/">Functional JavaScript </a></p>
+					<p class="place">3rd</p><p class="prize"><a target="_blank" href="http://www.oreilly.de/catalog/9781449356378/">JavaScript Testing with Jasmine</a></p>
 					<p class="prizeBy">by O'Reilly</p>
 				</section>
 				<section id="round2" class="prizesHome">

@@ -88,10 +88,9 @@ function checkEmail($email) {
   }
 }
 
-
 function checkStartDate($email) {
   if (isSuperuser($email)) {
-    return 'info@webworkercontest.de';
+    return 'info@webworkercontest.net';
   }
   $currentTime = time();
   $startTime = mktime(0, 0, 0, 5, 28, 2014);

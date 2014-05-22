@@ -124,6 +124,10 @@ Jetzt müsst ihr ihn nur noch ein wenig tunen ;-)
   Ein Spiel dauert genau 10.000 Züge. Dabei werden die Züge der beiden Web Worker zusammengezählt.
 </p>
 <br>
+<p>
+  Bei Punktgleichheit entscheidet der frühere Upload-Zeitpunkt.
+</p>
+<br>
 <br>
 <p>
 Viel Spaß beim Programmieren!

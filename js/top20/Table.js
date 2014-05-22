@@ -25,7 +25,9 @@ define([
   Table.prototype.addRow = function(data) {
     var tr = document.createElement("tr");
     tr.appendChild(this.createTd(this.position + ".", true));
-    tr.appendChild(this.createTd(data.name));
+    var nameElm = this.createTd(data.name);
+    nameElm.title = "Author: " + data.author;
+    tr.appendChild(nameElm);
     tr.appendChild(this.createTd(data.points, true));
     tr.appendChild(this.createTd(data.wins + " : " + data.defeats, true));
     this.tableBody.appendChild(tr);

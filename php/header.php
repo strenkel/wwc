@@ -1,7 +1,7 @@
 <header id="topmenu">
 	<nav>
 		<ul>
-			<li class="logo"><div id="logo"><img src="images/logos/wwc_logo.jpg" alt="WWC-Logo" /></div></li>
+			<li class="logo"><a href="index.php"><div id="logo"><img src="images/logos/wwc_logo.jpg" alt="WWC-Logo" /></a></div></li>
 
       <li><a href="index.php" class='<?php echo "$headerIndexIsActive"; ?>' >Home</a></li>
 			<li><a href="guide.php" class='<?php echo "$headerGuideIsActive"; ?>' >Guide</a></li>

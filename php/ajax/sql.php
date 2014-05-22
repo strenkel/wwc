@@ -51,7 +51,7 @@
    * @return {[String]}
    */
   function selectWorkersOrderByPosition() {
-    $data = mysql_query("SELECT name FROM worker w, chart c WHERE w.id = c.player ORDER BY c.points DESC")
+    $data = mysql_query("SELECT name FROM worker w, chart c WHERE w.id = c.player ORDER BY c.points DESC, w.ts ASC")
       or die(mysql_error());
     $names = array();
     while($row = mysql_fetch_array($data)) {
@@ -206,7 +206,7 @@
   }
 
   function getTable() {
-    $sql = "SELECT w.name, w.author, c.points, c.wins, c.defeats FROM worker w, chart c WHERE w.Id = c.player ORDER BY c.points DESC";
+    $sql = "SELECT w.name, w.author, c.points, c.wins, c.defeats FROM worker w, chart c WHERE w.Id = c.player ORDER BY c.points DESC, w.ts ASC";
     $data = mysql_query($sql) or die(mysql_error());
     $table = array();
     while($rowData = mysql_fetch_array($data)) {

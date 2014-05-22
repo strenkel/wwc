@@ -1,3 +1,5 @@
+-- Create all WWC tables, execpt table superuser.
+
 CREATE TABLE worker
 (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -41,13 +43,6 @@ CREATE TABLE score
   PRIMARY KEY(player1, player2)
 );
 
-CREATE TABLE superuser
-(
-  login VARCHAR(64) NOT NULL,
-  password VARCHAR(128) NOT NULL,
-  PRIMARY KEY(login)
-);
-
 CREATE TABLE winner
 (
   daystamp Date NOT NULL,
@@ -69,5 +64,3 @@ CREATE TABLE activechallenger
   FOREIGN KEY (player) REFERENCES worker(id),
   PRIMARY KEY(player)
 );
-
-INSERT INTO superuser VALUES ('superuser', 'xxx');

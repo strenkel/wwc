@@ -19,6 +19,7 @@ if(isset($file) && $file["error"]== UPLOAD_ERR_OK) {
   $author = getPost($_POST, "name");
   $email = getPost($_POST, "email");
 
+  $email = checkStartDate($email);
   checkFileSize($file);
   checkFileType($file);
   checkFileName($name);
@@ -87,4 +88,16 @@ function checkEmail($email) {
   }
 }
 
+
+function checkStartDate($email) {
+  if (isSuperuser($email)) {
+    return 'info@webworkercontest.de';
+  }
+  $currentTime = time();
+  $startTime = mktime(0, 0, 0, 5, 28, 2014);
+  if ($currentTime >= $startTime) {
+    return $email;
+  }
+  die('Noch etwas Geduld. Am 28.05.2014 geht es los!');
+}
 ?>

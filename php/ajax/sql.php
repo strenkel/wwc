@@ -94,7 +94,7 @@
   }
 
   function isSuperuser($password) {
-    $data = mysql_query("SELECT login FROM superuser WHERE login='superuser' AND password='$password'") or die(mysql_error());
+    $data = mysql_query("SELECT login FROM superuser WHERE login='superuser' AND password=md5('$password')") or die(mysql_error());
     $row = mysql_fetch_array($data);
     if ($row) {
       return true;

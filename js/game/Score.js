@@ -93,7 +93,7 @@ define([
     var l = this.playerLength;
     if (this.playerAreEquals()) {
       for (i = 0; i < l; i++) {
-        this.pointElements[i].innerHTML = "- same workers -";
+        this.pointElements[i].innerHTML = "same workers";
       }
     } else {
       for (i = 0; i < l; i++) {

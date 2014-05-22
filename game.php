@@ -33,9 +33,6 @@
 						<div class="playerLine">
 							<div class="line label">Gewonnen:</div><div class="line points" id="wwc-points-player0">0</div>
 						</div>
-						<div class="playerLine">
-							<div class="line label author">Author:</div><div class="line author" id="wwc-author-player0"></div>
-						</div>
 					</div>
 					<div class="color-player1 new-line">
 						<div class="playerLine">
@@ -46,9 +43,6 @@
 						</div>
 						<div class="playerLine">
 							<div class="line label">Gewonnen:</div><div class="line points" id="wwc-points-player1">0</div>
-						</div>
-						<div class="playerLine">
-							<div class="line label author">Author:</div><div class="line author" id="wwc-author-player1"></div>
 						</div>
 					</div>
 				</div>

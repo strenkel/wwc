@@ -1,3 +1,12 @@
+<?php
+	if (!isset($headerIndexIsActive)) $headerIndexIsActive = "";
+	if (!isset($headerGuideIsActive)) $headerGuideIsActive = "";
+	if (!isset($headerGameIsActive)) $headerGameIsActive = "";
+	if (!isset($headerUploadIsActive)) $headerUploadIsActive = "";
+	if (!isset($headerTop20IsActive)) $headerTop20IsActive = "";
+	if (!isset($headerWinnerIsActive)) $headerWinnerIsActive = "";
+?>
+
 <header id="topmenu">
 	<nav>
 		<ul>

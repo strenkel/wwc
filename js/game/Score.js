@@ -55,10 +55,12 @@ define([
   };
 
   Score.prototype.updatePoints = function() {
-    if (this.score[0] > this.score[1]) {
-      this.points[this.playerNames[0]]++;
-    } else if (this.score[1] > this.score[0]) {
-      this.points[this.playerNames[1]]++;
+    if (!this.playerAreEquals()) {
+      if (this.score[0] > this.score[1]) {
+        this.points[this.playerNames[0]]++;
+      } else if (this.score[1] > this.score[0]) {
+        this.points[this.playerNames[1]]++;
+      }
     }
     this.viewPoints();
     this.saveResult();
@@ -87,9 +89,22 @@ define([
 
   /** @private */
   Score.prototype.viewPoints = function() {
-    for (var i = 0, l = this.playerLength; i < l; i++) {
-      this.pointElements[i].innerHTML = this.points[this.playerNames[i]];
+    var i;
+    var l = this.playerLength;
+    if (this.playerAreEquals()) {
+      for (i = 0; i < l; i++) {
+        this.pointElements[i].innerHTML = "- same workers -";
+      }
+    } else {
+      for (i = 0; i < l; i++) {
+        this.pointElements[i].innerHTML = this.points[this.playerNames[i]];
+      }
     }
+  };
+
+  /** @private */
+  Score.prototype.playerAreEquals = function() {
+    return this.playerNames[0] === this.playerNames[1];
   };
 
   /** @private */

@@ -71,19 +71,29 @@
    * @return {Integer}
    */
   function getWorkerId($name) {
-    $data = mysql_query("SELECT id FROM worker WHERE name='$name'") or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    return intval($row["id"]);
+    $sql = "SELECT id FROM worker WHERE name=?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("s", $name);
+    $stmt->execute();
+    $stmt->bind_result($id);
+    $stmt->fetch();
+    $stmt->close();
+    return intval($id);
   }
 
   /**
-   * @param $name {Integer}
+   * @param $id {Integer}
    * @return {String}
    */
   function getWorkerName($id) {
-    $data = mysql_query("SELECT name FROM worker WHERE id=$id") or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    return $row["name"];
+    $sql = "SELECT name FROM worker WHERE id=?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->bind_result($name);
+    $stmt->fetch();
+    $stmt->close();
+    return intval($name);
   }
 
   /**
@@ -93,10 +103,21 @@
    * @param $comment {String}
    */
   function insertNewWorker($name, $author, $email) {
-    $sql = "INSERT INTO worker (name, author, email) VALUES ('$name', '$author', '$email')";
-    mysql_query($sql) or die(mysql_error());
+
+    // Insert worker into table worker.
+    $sql = "INSERT INTO worker (name, author, email) VALUES (?, ?, ?)";
+    $stmt = prepare($sql);
+    $stmt->bind_param("sss", $name, $author, $email);
+    $stmt->execute();
+    $stmt->close();
+
+    // Register as challenger
     $id = getWorkerId($name);
-    mysql_query("INSERT INTO challenger VALUES ($id)") or die(mysql_error());
+    $sql = "INSERT INTO challenger VALUES (?)";
+    $stmt = prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->close();
   }
 
   function isSuperuser($password) {

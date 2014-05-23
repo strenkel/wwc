@@ -44,36 +44,25 @@
    * @return {Boolean}
    */
   function isNewWorker($name) {
-    $data = mysql_query("SELECT name FROM worker WHERE name='$name'") or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    if ($row) {
-      return false;
-    }
-    return true;
+    $sql = "SELECT name FROM worker WHERE name=?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("s", $name);
+    return !statementHasResult($stmt);
   }
 
   /**
    * @return {[String]}
    */
-  //function selectWorkersOrderByPosition() {
-  //  $data = mysql_query("SELECT name FROM worker w, chart c WHERE w.id = c.player ORDER BY c.points DESC, w.ts ASC")
-  //    or die(mysql_error());
-  //  $names = array();
-  //  while($row = mysql_fetch_array($data)) {
-  //    $names[] = $row['name'];
-  //  }
-  //  return $names;
-  //}
-
   function selectWorkersOrderByPosition() {
-    global $db;
-    $stmt = $db->prepare("SELECT name FROM worker w, chart c WHERE w.id = c.player ORDER BY c.points DESC, w.ts ASC");
+    $sql = "SELECT name FROM worker w, chart c WHERE w.id = c.player ORDER BY c.points DESC, w.ts ASC";
+    $stmt = prepare($sql);
     $stmt->execute();
     $stmt->bind_result($name);
     $names = array();
     while ($stmt->fetch()) {
       $names[] = $name;
     }
+    $stmt->close();
     return $names;
   }
 
@@ -497,6 +486,27 @@
       return true;
     }
     return false;
+  }
+
+  /**
+   * @return {true: has result | false: has no result}
+   */
+  function statementHasResult($stmt) {
+    $stmt->execute();
+    $hasResult = $stmt->fetch();
+    $stmt->close();
+    if ($hasResult === false) {
+      die("Error in statementHasResult: Statement::fetch failed!");
+    }
+    if ($hasResult === null) {
+      $hasResult = false;
+    }
+    return $hasResult;
+  }
+
+  function prepare($sql) {
+    global $db;
+    return $db->prepare($sql);
   }
 
   function logToFile($message, $myVar) {

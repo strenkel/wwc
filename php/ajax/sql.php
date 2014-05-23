@@ -4,8 +4,11 @@
   $MAX_CHART_SIZE = 20; // default 20
   $MIN_GAME_SIZE_PER_FIXTURE = 10; // default 10
   $W2C_START_DATE = new DateTime('2014-05-28'); // default 2014-05-28
+  $db;
 
   function connectToDatabase() {
+
+    global $db;
 
     // read mysql user, password, db and server from ini file
     $configPath = "../../../../config/";
@@ -17,6 +20,8 @@
 
     mysql_connect($mysqlServer, $mysqlUser, $mysqlPassword) or die(mysql_error());
     mysql_select_db($mysqlDb) or die(mysql_error());
+
+    $db = new mysqli($mysqlServer, $mysqlUser, $mysqlPassword, $mysqlDb);
   }
 
   /**
@@ -50,12 +55,24 @@
   /**
    * @return {[String]}
    */
+  //function selectWorkersOrderByPosition() {
+  //  $data = mysql_query("SELECT name FROM worker w, chart c WHERE w.id = c.player ORDER BY c.points DESC, w.ts ASC")
+  //    or die(mysql_error());
+  //  $names = array();
+  //  while($row = mysql_fetch_array($data)) {
+  //    $names[] = $row['name'];
+  //  }
+  //  return $names;
+  //}
+
   function selectWorkersOrderByPosition() {
-    $data = mysql_query("SELECT name FROM worker w, chart c WHERE w.id = c.player ORDER BY c.points DESC, w.ts ASC")
-      or die(mysql_error());
+    global $db;
+    $stmt = $db->prepare("SELECT name FROM worker w, chart c WHERE w.id = c.player ORDER BY c.points DESC, w.ts ASC");
+    $stmt->execute();
+    $stmt->bind_result($name);
     $names = array();
-    while($row = mysql_fetch_array($data)) {
-      $names[] = $row['name'];
+    while ($stmt->fetch()) {
+      $names[] = $name;
     }
     return $names;
   }

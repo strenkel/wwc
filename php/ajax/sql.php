@@ -22,6 +22,9 @@
     $mysqlPassword = $configPassword["mysqlPassword_".$mysqlDb];
 
     $db = new mysqli($mysqlServer, $mysqlUser, $mysqlPassword, $mysqlDb);
+    if (mysqli_connect_error()) {
+      die('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
+    }
   }
 
   /**
@@ -595,7 +598,12 @@
 
   function prepare($sql) {
     global $db;
-    return $db->prepare($sql);
+    $stmt = $db->prepare($sql);
+    if ($stmt) {
+      return $stmt;
+    } else {
+      die("Error in prepare(): ".$db->error);
+    }
   }
 
   function logToFile($message, $myVar) {

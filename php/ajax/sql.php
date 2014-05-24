@@ -93,7 +93,7 @@
     $stmt->bind_result($name);
     $stmt->fetch();
     $stmt->close();
-    return intval($name);
+    return $name;
   }
 
   /**
@@ -121,12 +121,10 @@
   }
 
   function isSuperuser($password) {
-    $data = mysql_query("SELECT login FROM superuser WHERE login='superuser' AND password=md5('$password')") or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    if ($row) {
-      return true;
-    }
-    return false;
+    $sql = "SELECT login FROM superuser WHERE login='superuser' AND password=md5(?)";
+    $stmt = prepare($sql);
+    $stmt->bind_param("s", $password);
+    return statementHasResult($stmt);
   }
 
   function saveResult($workerNames, $score) {
@@ -137,8 +135,11 @@
 
     // insert into Game
     $sql = "INSERT INTO game (player1, player2, points1, points2) ".
-      "VALUES ($id[0], $id[1], $score[0], $score[1])";
-    mysql_query($sql) or die(mysql_error());
+      "VALUES (?, ?, ?, ?)";
+    $stmt = prepare($sql);
+    $stmt->bind_param("iiii", $id[0], $id[1], $score[0], $score[1]);
+    $stmt->execute();
+    $stmt->close();
 
     // determine points
     $points[0] = 0;
@@ -152,14 +153,18 @@
     }
 
     // insert into or update Score
+    $stmt;
     if (hasScore($id)) {
-      $sql = "UPDATE score SET points1 = points1 + $points[0], ".
-        "points2 = points2 + $points[1] WHERE player1 = $id[0] AND player2 = $id[1]";
+      $sql = "UPDATE score SET points1 = points1 + ?, points2 = points2 + ? WHERE player1 = ? AND player2 = ?";
+      $stmt = prepare($sql);
+      $stmt->bind_param("iiii", $points[0], $points[1], $id[0], $id[1]);
     } else {
-      $sql = "INSERT INTO score (player1, player2, points1, points2) VALUES".
-        "($id[0], $id[1], $points[0], $points[1])";
+      $sql = "INSERT INTO score (player1, player2, points1, points2) VALUES (?, ?, ?, ?)";
+      $stmt = prepare($sql);
+      $stmt->bind_param("iiii", $id[0], $id[1], $points[0], $points[1]);
     }
-    mysql_query($sql) or die(mysql_error());
+    $stmt->execute();
+    $stmt->close();
 
     // update chart
     $chart[0] = 0;
@@ -175,17 +180,14 @@
 
     updateChart($id[0], $chart[0], $points[0], $points[1]);
     updateChart($id[1], $chart[1], $points[1], $points[0]);
-
-    for ($i = 0; $i < 2; $i++) {
-      if ($chart[$i] != 0) {
-        updateChart($id[$i], $chart[$i]);
-      }
-    }
   }
 
   function updateChart($id, $points, $wins, $defeats) {
-    $sql = "UPDATE chart SET points = points + $points, wins = wins + $wins, defeats = defeats + $defeats WHERE player = $id";
-    mysql_query($sql) or die(mysql_error());
+    $sql = "UPDATE chart SET points = points + ?, wins = wins + ?, defeats = defeats + ? WHERE player = ?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("iiii", $points, $wins, $defeats, $id);
+    $stmt->execute();
+    $stmt->close();
   }
 
   function hasScore($ids) {

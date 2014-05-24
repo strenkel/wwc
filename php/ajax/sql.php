@@ -18,9 +18,6 @@
     $mysqlDb = $config["mysqlDb"];
     $mysqlServer = $config["mysqlServer"];
 
-    mysql_connect($mysqlServer, $mysqlUser, $mysqlPassword) or die(mysql_error());
-    mysql_select_db($mysqlDb) or die(mysql_error());
-
     $db = new mysqli($mysqlServer, $mysqlUser, $mysqlPassword, $mysqlDb);
   }
 
@@ -475,37 +472,56 @@
    * @param $challenger {Integer}
    */
   function deleteFromChallenger($challenger) {
-    $sql = "DELETE FROM challenger WHERE player = $challenger";
-    mysql_query($sql) or die(mysql_error());
+    $sql = "DELETE FROM challenger WHERE player = ?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("i", $challenger);
+    $stmt->execute();
+    $stmt->close();
   }
 
   function clearActiveChallenger() {
     $sql = "DELETE FROM activechallenger";
-    mysql_query($sql) or die(mysql_error());
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->close();
   }
 
   function insertIntoChart($player) {
-    $sql = "INSERT INTO chart VALUES ($player, 0, 0, 0)";
-    mysql_query($sql) or die(mysql_error());
+    $sql = "INSERT INTO chart VALUES (?, 0, 0, 0)";
+    $stmt = prepare($sql);
+    $stmt->bind_param("i", $player);
+    $stmt->execute();
+    $stmt->close();
   }
 
   function insertIntoActiveChallenger($challenger) {
-    $sql = "INSERT INTO activechallenger VALUES ($challenger)";
-    mysql_query($sql) or die(mysql_error());
+    $sql = "INSERT INTO activechallenger VALUES (?)";
+    $stmt = prepare($sql);
+    $stmt->bind_param("i", $challenger);
+    $stmt->execute();
+    $stmt->close();
   }
 
   function getPoints($player) {
-    $sql = "SELECT points FROM chart WHERE player = $player";
-    $data = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    return intval($row["points"]);
+    $sql = "SELECT points FROM chart WHERE player = ?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("i", $player);
+    $stmt->execute();
+    $stmt->bind_result($points);
+    $stmt->fetch();
+    $stmt->close();
+    return intval($points);
   }
 
   function fillUpMissingFixtures($player) {
-    $sql = "SELECT player FROM chart WHERE player != $player";
-    $data = mysql_query($sql) or die(mysql_error());
-    while($row = mysql_fetch_array($data)) {
-      $rival = $row["player"];
+    $sql = "SELECT player FROM chart WHERE player != ?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("i", $player);
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($rivalString);
+    while($stmt->fetch()) {
+      $rival = intval($rivalString);
       if (!hasFixture($player, $rival)) {
         insertIntoScore($player, $rival);
       }
@@ -513,41 +529,42 @@
         insertIntoScore($rival, $player);
       }
     }
+    $stmt->free_result();
+    $stmt->close();
   }
 
   function insertIntoScore($player1, $player2) {
-    $sql = "INSERT INTO score VALUES ($player1, $player2, 0, 0)";
-    mysql_query($sql) or die(mysql_error());
+    $sql = "INSERT INTO score VALUES (?, ?, 0, 0)";
+    $stmt = prepare($sql);
+    $stmt->bind_param("ii", $player1, $player2);
+    $stmt->execute();
+    $stmt->close();
   }
 
   function hasFixture($player1, $player2) {
-    $sql = "SELECT player1 FROM score WHERE player1 = $player1 AND player2 = $player2";
-    return queryHasResult($sql);
+    $sql = "SELECT player1 FROM score WHERE player1 = ? AND player2 = ?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("ii", $player1, $player2);
+    return statementHasResult($stmt);
   }
 
   function getChallenger() {
     $sql = "SELECT w.name, w.author FROM worker w JOIN challenger c ON w.Id = c.player ORDER BY w.ts ASC LIMIT 100";
-    $data = mysql_query($sql) or die(mysql_error());
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($name, $author);
     $table = array();
-    while($rowData = mysql_fetch_array($data)) {
+    while($stmt->fetch()) {
       $row = new stdClass;
-      $row->name = $rowData['name'];
-      $row->author = $rowData['author'];
+      $row->name = $name;
+      $row->author = $author;
       $table[] = $row;
     }
+    $stmt->close();
     return $table;
   }
 
   // --- private ---
-
-  function queryHasResult($sql) {
-    $data = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    if ($row) {
-      return true;
-    }
-    return false;
-  }
 
   /**
    * @see statementHasResult()

@@ -191,8 +191,10 @@
   }
 
   function hasScore($ids) {
-    $sql = "SELECT player1 FROM score WHERE player1 = $ids[0] AND player2 = $ids[1]";
-    return queryHasResult($sql);
+    $sql = "SELECT player1 FROM score WHERE player1 = ? AND player2 = ?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("ii", $ids[0], $ids[1]);
+    return statementHasResult($stmt);
   }
 
   /**
@@ -224,29 +226,35 @@
   function getScore($id0, $id1) {
     $score[0] = 0;
     $score[1] = 0;
-    $sql = "SELECT points1, points2 FROM score WHERE player1 = $id0 AND player2 = $id1";
-    $data = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    if ($row) {
-      $score[0] = intval($row["points1"]);
-      $score[1] = intval($row["points2"]);
+    $sql = "SELECT points1, points2 FROM score WHERE player1 = ? AND player2 = ?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("ii", $id0, $id1);
+    $stmt->execute();
+    $stmt->bind_result($points1, $points2);
+    if ($stmt->fetch()) {
+      $score[0] = intval($points1);
+      $score[1] = intval($points2);
     }
+    $stmt->close();
     return $score;
   }
 
   function getTable() {
-    $sql = "SELECT w.name, w.author, c.points, c.wins, c.defeats FROM worker w, chart c WHERE w.Id = c.player ORDER BY c.points DESC, w.ts ASC";
-    $data = mysql_query($sql) or die(mysql_error());
     $table = array();
-    while($rowData = mysql_fetch_array($data)) {
+    $sql = "SELECT w.name, w.author, c.points, c.wins, c.defeats FROM worker w, chart c WHERE w.Id = c.player ORDER BY c.points DESC, w.ts ASC";
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($name, $author, $points, $wins, $defeats);
+    while ($stmt->fetch()) {
       $row = new stdClass;
-      $row->name = $rowData['name'];
-      $row->author = $rowData['author'];
-      $row->points = intval($rowData['points']);
-      $row->wins = intval($rowData['wins']);
-      $row->defeats = intval($rowData['defeats']);
+      $row->name = $name;
+      $row->author = $author;
+      $row->points = intval($points);
+      $row->wins = intval($wins);
+      $row->defeats = intval($defeats);
       $table[] = $row;
     }
+    $stmt->close();
     return $table;
   }
 
@@ -255,38 +263,45 @@
    */
   function getActiveChallenger() {
     $sql = "SELECT player FROM activechallenger";
-    $data = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    if ($row) {
-      return intval($row["player"]);
-    } else {
-      return null;
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($player);
+    $activeChallenger = null;
+    if ($stmt->fetch()) {
+      $activeChallenger = intval($player);
     }
+    $stmt->close();
+    return $activeChallenger;
   }
 
   function chartHasData() {
     $sql = "SELECT player FROM chart";
-    return queryHasResult($sql);
+    return sqlHasResult($sql);
   }
 
   function getTableSize($table) {
     $sql = "SELECT COUNT(*) as size FROM $table";
-    $data = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    return intval($row["size"]);
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($size);
+    $stmt->fetch();
+    $stmt->close();
+    return intval($size);
   }
 
   function scoreHasEnoughGames() {
     global $MIN_GAME_SIZE_PER_FIXTURE;
     $sql = "SELECT player1 FROM score WHERE points1 + points2 < $MIN_GAME_SIZE_PER_FIXTURE";
-    return !queryHasResult($sql);
+    return !sqlHasResult($sql);
   }
 
   function playerHasEnoughGames($player) {
     global $MIN_GAME_SIZE_PER_FIXTURE;
     $sql = "SELECT player1 FROM score WHERE points1 + points2 < $MIN_GAME_SIZE_PER_FIXTURE ".
-      "AND (player1 = $player OR player2 = $player)";
-    return !queryHasResult($sql);
+      "AND (player1 = ? OR player2 = ?)";
+    $stmt = prepare($sql);
+    $stmt->bind_param("ii", $player, $player);
+    return !statementHasResult($stmt);
   }
 
   /**
@@ -294,26 +309,31 @@
    */
   function nextChartGame() {
     $sql = "SELECT player1, player2 FROM score ORDER BY (points1 + points2) ASC";
-    $data = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($data);
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($player1, $player2);
     $players = array();
-    if ($row) {
-      $players[0] = intval($row["player1"]);
-      $players[1] = intval($row["player2"]);
+    if ($stmt->fetch()) {
+      $players[0] = intval($player1);
+      $players[1] = intval($player2);
     }
+    $stmt->close();
     return $players;
   }
 
   function nextChartGameFor($player) {
-    $sql = "SELECT player1, player2 FROM score WHERE (player1 = $player OR player2 = $player) ".
+    $sql = "SELECT player1, player2 FROM score WHERE (player1 = ? OR player2 = ?) ".
       "ORDER BY (points1 + points2) ASC";
-    $data = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($data);
+    $stmt = prepare($sql);
+    $stmt->bind_param("ii", $player, $player);
+    $stmt->execute();
+    $stmt->bind_result($player1, $player2);
     $players = array();
-    if ($row) {
-      $players[0] = intval($row["player1"]);
-      $players[1] = intval($row["player2"]);
+    if ($stmt->fetch()) {
+      $players[0] = intval($player1);
+      $players[1] = intval($player2);
     }
+    $stmt->close();
     return $players;
   }
 
@@ -337,11 +357,15 @@
    * @return {Integer | null}
    */
   function getBottomOfChart() {
+    // TODO: Upload-timestamp isn't consider in case of equlas min points.
     $sql = "SELECT player FROM chart WHERE points = (SELECT MIN(points) FROM chart)";
-    $data = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    if ($row) {
-      return intval($row["player"]);
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($player);
+    $hasResult = $stmt->fetch();
+    $stmt->close();
+    if ($hasResult) {
+      return intval($player);
     } else {
       return null;
     }
@@ -351,16 +375,22 @@
    * @param {Integer}
    */
   function removeFromChart($player) {
-    $sql = "DELETE FROM chart WHERE player = $player";
-    mysql_query($sql) or die(mysql_error());
+    $sql = "DELETE FROM chart WHERE player = ?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("i", $player);
+    $stmt->execute();
+    $stmt->close();
   }
 
   /**
    * @param {Integer}
    */
   function removeFromScore($player) {
-    $sql = "DELETE FROM score WHERE player1 = $player OR player2 = $player";
-    mysql_query($sql) or die(mysql_error());
+    $sql = "DELETE FROM score WHERE player1 = ? OR player2 = ?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("ii", $player, $player);
+    $stmt->execute();
+    $stmt->close();
   }
 
   /**
@@ -371,9 +401,10 @@
    */
   function removeChartPoints($relegatedPlayer) {
     $sql = "SELECT player FROM chart";
-    $data = mysql_query($sql) or die(mysql_error());
-    while($row = mysql_fetch_array($data)) {
-      $player = $row["player"];
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($player);
+    while($stmt->fetch()) {
       $score = getTotalScore($player, $relegatedPlayer);
       $points = 0;
       if ($score[0] > $score[1]) {
@@ -381,6 +412,7 @@
       }
       updateChart($player, $points, -$score[0], -$score[1]);
     }
+    $stmt->close();
   }
 
   function isWinner($player0, $player1) {
@@ -395,11 +427,15 @@
     $nextWinnerDate = getNextWinnerDate();
     $nextWinnerDateString = $nextWinnerDate->format('Y-m-d');
     $sql = "SELECT player FROM challenger c JOIN worker w ON c.player = w.id ".
-      "WHERE DATE(w.ts) <= '$nextWinnerDateString' ORDER BY w.ts ASC";
-    $data = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($data);
-    if ($row) {
-      return intval($row["player"]);
+      "WHERE DATE(w.ts) <= ? ORDER BY w.ts ASC";
+    $stmt = prepare($sql);
+    $stmt->bind_param("s", $nextWinnerDateString);
+    $stmt->execute();
+    $stmt->bind_result($player);
+    $hasResult = $stmt->fetch();
+    $stmt->close();
+    if ($hasResult) {
+      return intval($player);
     } else {
       return null;
     }
@@ -424,12 +460,14 @@
    */
   function getLastWinnerDate() {
     $sql = "SELECT MAX(daystamp) as lastdate FROM winner";
-    $data = mysql_query($sql) or die(mysql_error());
-    $row = mysql_fetch_array($data);
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($lastDateString);
     $lastDate = null;
-    if ($row["lastdate"]) {
-      $lastDate = new DateTime($row["lastdate"]);
+    if ($stmt->fetch()) {
+      $lastDate = new DateTime($lastDateString);
     }
+    $stmt->close();
     return $lastDate;
   }
 
@@ -509,6 +547,14 @@
       return true;
     }
     return false;
+  }
+
+  /**
+   * @see statementHasResult()
+   */
+  function sqlHasResult($sql) {
+    $stmt = prepare($sql);
+    return statementHasResult($stmt);
   }
 
   /**

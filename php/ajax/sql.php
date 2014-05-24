@@ -10,13 +10,16 @@
 
     global $db;
 
-    // read mysql user, password, db and server from ini file
-    $configPath = "../../../../config/";
-    $config = parse_ini_file($configPath."w2c.ini");
-    $mysqlUser = $config["mysqlUser"];
-    $mysqlPassword = $config["mysqlPassword"];
-    $mysqlDb = $config["mysqlDb"];
-    $mysqlServer = $config["mysqlServer"];
+    // read mysql user, password, db and server from ini files
+    $configPathPassword = "../../../../config/";
+    $configPassword = parse_ini_file($configPathPassword."wwc-password.ini");
+    $configPath = "../../config/";
+    $configWwc = parse_ini_file($configPath."wwc.ini");
+
+    $mysqlUser = $configWwc["mysqlUser"];
+    $mysqlDb = $configWwc["mysqlDb"];
+    $mysqlServer = $configWwc["mysqlServer"];
+    $mysqlPassword = $configPassword["mysqlPassword_".$mysqlDb];
 
     $db = new mysqli($mysqlServer, $mysqlUser, $mysqlPassword, $mysqlDb);
   }

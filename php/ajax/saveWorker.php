@@ -14,7 +14,6 @@ if(isset($file) && $file["error"]== UPLOAD_ERR_OK) {
   require_once('sql.php');
   connectToDatabase();
 
-  $workerDirectory    = '../../worker/';
   $name = $file['name'];
   $author = getPost($_POST, "name");
   $email = getPost($_POST, "email");
@@ -26,7 +25,7 @@ if(isset($file) && $file["error"]== UPLOAD_ERR_OK) {
   checkAuthor($author);
   checkEmail($email);
 
-  if (move_uploaded_file($file['tmp_name'], $workerDirectory.$name)) {
+  if (move_uploaded_file($file['tmp_name'], $WORKER_DIR.$name)) {
     insertNewWorker($name, $author, $email);
     echo 'Worker was uploaded successfully!';
   } else {

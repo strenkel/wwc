@@ -6,4 +6,5 @@
 --DROP TABLE winner;
 --DROP TABLE challenger;
 --DROP TABLE activechallenger;
+--DROP TABLE droppedworker;
 --DROP TABLE worker;

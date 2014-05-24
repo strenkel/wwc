@@ -64,3 +64,10 @@ CREATE TABLE activechallenger
   FOREIGN KEY (player) REFERENCES worker(id),
   PRIMARY KEY(player)
 );
+
+CREATE TABLE droppedworker
+(
+  player INT NOT NULL,
+  FOREIGN KEY (player) REFERENCES worker(id),
+  PRIMARY KEY(player)
+)

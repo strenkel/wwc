@@ -45,6 +45,19 @@
   }
 
   /**
+   * @param $last {1, 2, 3, ...}
+   * @return {String}
+   */
+  function selectLastDroppedWorker($last) {
+    $names = selectLastDroppedWorkers();
+    if (sizeof($names) >= $last) {
+      return $names[$last - 1];
+    } else {
+      return '';
+    }
+  }
+
+  /**
    * @param $name {String}
    * @return {Boolean}
    */
@@ -60,6 +73,19 @@
    */
   function selectWorkersOrderByPosition() {
     $sql = "SELECT name FROM worker w, chart c WHERE w.id = c.player ORDER BY c.points DESC, w.ts ASC";
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($name);
+    $names = array();
+    while ($stmt->fetch()) {
+      $names[] = $name;
+    }
+    $stmt->close();
+    return $names;
+  }
+
+  function selectLastDroppedWorkers() {
+    $sql = "SELECT w.name FROM droppedworker d JOIN worker w ON d.player = w.id ORDER BY w.ts DESC LIMIT 30";
     $stmt = prepare($sql);
     $stmt->execute();
     $stmt->bind_result($name);

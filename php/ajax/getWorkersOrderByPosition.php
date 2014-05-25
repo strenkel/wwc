@@ -6,6 +6,6 @@
   header("Content-type: application/json");
   require_once('sql.php');
   connectToDatabase();
-  $names = selectWorkersOrderByPosition();
+  $names = selectLastDroppedWorkers();
   echo json_encode($names);
 ?>

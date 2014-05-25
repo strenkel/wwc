@@ -3,15 +3,20 @@ define(function () {
 
   "use strict";
 
+  var WORKER_DIR = "worker/";
+  var DROPPED_WORKER_DIR = "droppedworker/";
+
   /**
    * Pass a workername (a js file on the server) or a local file.
    *
    * @param file0 {String | File}
    * @param file1 {String | File}
+   * @param isDropped {Boolean}
    */
-  var WorkerDisposer = function(file0, file1) {
+  var WorkerDisposer = function(file0, file1, isDropped) {
     this.file0 = file0;
     this.file1 = file1;
+    this.workerDir = isDropped ? DROPPED_WORKER_DIR : WORKER_DIR;
   };
 
   /**
@@ -25,17 +30,18 @@ define(function () {
    * @returns {[Worker]}
    */
   WorkerDisposer.prototype.createWorkers = function() {
-    return [createWorker(this.file0), createWorker(this.file1)];
+    return [this.createWorker(this.file0), this.createWorker(this.file1)];
   };
 
-  var createWorker = function(file) {
+  /** @private */
+  WorkerDisposer.prototype.createWorker = function(file) {
     if (isLocalFile(file)) {
       var objectURL = window.URL.createObjectURL(file);
       var worker = new Worker(objectURL);
       window.URL.revokeObjectURL(objectURL);
       return worker;
     } else {
-      return new Worker("worker/" + file);
+      return new Worker(this.workerDir + file);
     }
   };
 

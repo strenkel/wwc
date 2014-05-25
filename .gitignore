@@ -1,4 +1,5 @@
 worker/
+droppedworker/
 worker-examples/
 config/
 log.txt

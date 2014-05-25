@@ -9,5 +9,5 @@
   require_once('sql.php');
   connectToDatabase();
   $position = intval($_POST['position']);
-  echo selectWorkerByPosition($position);
+  echo selectLastDroppedWorker($position);
 ?>

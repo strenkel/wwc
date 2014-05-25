@@ -26,7 +26,7 @@ define([
       var workerName0 = response0[0];
       var workerName1 = response1[0];
       if (workerName0 !== "" && workerName1 !== "") {
-        deferred.resolve(new WorkerDisposer(workerName0, workerName1));
+        deferred.resolve(new WorkerDisposer(workerName0, workerName1, true));
       } else if (positions[0] === 1 && positions[1] === 2) {
         deferred.resolve(null); // not enough workers in database
       } else {

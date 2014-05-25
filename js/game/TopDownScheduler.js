@@ -18,7 +18,7 @@ define([
   TopDownScheduler.prototype.getWorkerNames = function() {
     var deferred = $.Deferred();
     this.fetchWorkerNames().done((function() {
-      deferred.resolve(new WorkerDisposer(this.workerName0, this.workerName1, true));
+      deferred.resolve(this.createWorkerDisposer());
     }).bind(this));
     return deferred.promise();
   };
@@ -43,6 +43,15 @@ define([
       }).bind(this));
     }
     return deferred.promise();
+  };
+
+   /** @private */
+  TopDownScheduler.prototype.createWorkerDisposer = function() {
+    if (this.workerAreLoaded()) {
+      return new WorkerDisposer(this.workerName0, this.workerName1, true);
+    } else {
+      return null;
+    }
   };
 
    /** @private */

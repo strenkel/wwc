@@ -45,10 +45,14 @@
   }
 
   /**
+   * $last spezifies the dropping order.
+   * $last = 1 is the last droppes worker;
+   * $last = 2 is the last but one dropped worker and so on.
+   *
    * @param $last {1, 2, 3, ...}
    * @return {String}
    */
-  function selectLastDroppedWorker($last) {
+  function selectDroppedWorker($last) {
     $names = selectDroppedWorkers();
     if (sizeof($names) >= $last) {
       return $names[$last - 1];

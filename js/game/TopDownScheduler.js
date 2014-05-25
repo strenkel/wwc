@@ -1,9 +1,8 @@
 define([
   "jquery",
-  "game/PositionRunner",
   "game/WorkerDisposer",
   "util/Ajax"
-], function ($, PositionRunner, WorkerDisposer, Ajax) {
+], function ($, WorkerDisposer, Ajax) {
 
   "use strict";
 

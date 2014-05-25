@@ -8,7 +8,8 @@ define([
   "use strict";
 
   var TopDownScheduler = function() {
-    this.positionRunner = new PositionRunner();
+    this.workerName0 = null;
+    this.workerName1 = null;
   };
 
   /**
@@ -17,24 +18,37 @@ define([
    */
   TopDownScheduler.prototype.getWorkerNames = function() {
     var deferred = $.Deferred();
-    var positions = this.positionRunner.getNext();
-    var _this = this;
-    $.when(
-      Ajax.getDroppedWorker(positions[0]),
-      Ajax.getDroppedWorker(positions[1])
-    ).done(function(response0, response1) {
-      var workerName0 = response0[0];
-      var workerName1 = response1[0];
-      if (workerName0 !== "" && workerName1 !== "") {
-        deferred.resolve(new WorkerDisposer(workerName0, workerName1, true));
-      } else if (positions[0] === 1 && positions[1] === 2) {
-        deferred.resolve(null); // not enough workers in database
-      } else {
-        _this.positionRunner.reset();
-        _this.getWorkerNames().done(deferred.resolve);
-      }
-    });
+    this.fetchWorkerNames().done((function() {
+      deferred.resolve(new WorkerDisposer(this.workerName0, this.workerName1, true));
+    }).bind(this));
     return deferred.promise();
+  };
+
+  /** @private */
+  TopDownScheduler.prototype.fetchWorkerNames = function() {
+    var deferred = $.Deferred();
+    if (this.workerAreLoaded()) {
+      deferred.resolve();
+    } else {
+      $.when(
+        Ajax.getDroppedWorker(1),
+        Ajax.getDroppedWorker(2)
+      ).done((function(response0, response1) {
+        var workerName0 = response0[0];
+        var workerName1 = response1[0];
+        if (workerName0 !== "" && workerName1 !== "") {
+          this.workerName0 = workerName0;
+          this.workerName1 = workerName1;
+        }
+        deferred.resolve();
+      }).bind(this));
+    }
+    return deferred.promise();
+  };
+
+   /** @private */
+  TopDownScheduler.prototype.workerAreLoaded = function() {
+    return this.workerName0 !== null && this.workerName1 !== null;
   };
 
   return TopDownScheduler;

@@ -12,7 +12,6 @@ define([
   var FileScheduler = function(file0, file1) {
     this.file0 = file0;
     this.file1 = file1;
-    this.returnMatch = false;
   };
 
   /**
@@ -21,13 +20,7 @@ define([
    */
   FileScheduler.prototype.getWorkerNames = function() {
     var deferred = $.Deferred();
-    if (this.returnMatch) {
-      this.returnMatch = false;
-      deferred.resolve(new WorkerDisposer(this.file1, this.file0, true));
-    } else {
-      this.returnMatch = true;
-      deferred.resolve(new WorkerDisposer(this.file0, this.file1, true));
-    }
+    deferred.resolve(new WorkerDisposer(this.file0, this.file1, true));
     return deferred;
   };
 

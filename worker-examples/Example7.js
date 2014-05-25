@@ -24,7 +24,7 @@ onmessage = function (event) {
 };
 
 function holdOrChangeDirection(dir) {
-  if (Math.random() < 0.09) {
+  if (Math.random() < 0.11) {
     return getRandomDirection();
   } else {
     return dir;

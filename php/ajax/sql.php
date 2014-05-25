@@ -1,8 +1,8 @@
 <?php
 
   // Constants
-  $MAX_CHART_SIZE = 3; // default 20
-  $MIN_GAME_SIZE_PER_FIXTURE = 3; // default 10
+  $MAX_CHART_SIZE = 20; // default 20
+  $MIN_GAME_SIZE_PER_FIXTURE = 20; // default 10
   $W2C_START_DATE = new DateTime('2014-05-28'); // default 2014-05-28
   $WORKER_DIR = '../../worker/';
   $DROPPED_WORKER_DIR = '../../droppedworker/';

@@ -20,8 +20,8 @@ define([
     var positions = this.positionRunner.getNext();
     var _this = this;
     $.when(
-      Ajax.getWorkerNameByPosition(positions[0]),
-      Ajax.getWorkerNameByPosition(positions[1])
+      Ajax.getDroppedWorker(positions[0]),
+      Ajax.getDroppedWorker(positions[1])
     ).done(function(response0, response1) {
       var workerName0 = response0[0];
       var workerName1 = response1[0];

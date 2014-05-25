@@ -8,11 +8,11 @@ define(["jquery"], function ($) {
   var password = "";
 
   /**
-   * @param {Integer >= 0} position
+   * @param {Integer > 0} position
    * @returns {$.Promise(String, ...)}
    */
-  var getWorkerNameByPosition = function(position) {
-    return post("getWorkerByPosition.php", {
+  var getDroppedWorker = function(position) {
+    return post("getDroppedWorker.php", {
       position: position
     });
   };
@@ -108,7 +108,7 @@ define(["jquery"], function ($) {
   };
 
   return {
-    getWorkerNameByPosition: getWorkerNameByPosition,
+    getDroppedWorker: getDroppedWorker,
     getDroppedWorkers: getDroppedWorkers,
     uploadFile: uploadFile,
     checkSuperuser: checkSuperuser,

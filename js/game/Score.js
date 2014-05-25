@@ -66,6 +66,11 @@ define([
     this.saveResult();
   };
 
+  /** @public */
+  Score.prototype.resetPoints = function() {
+    this.points = {};
+  };
+
   /** @private */
   Score.prototype.saveResult = function() {
     if (this.superUser.shouldSaveResult()) {

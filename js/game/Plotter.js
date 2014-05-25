@@ -62,6 +62,10 @@ define(["jquery"], function ($) {
     }
   };
 
+  Plotter.prototype.resetPoints = function() {
+    this.score.resetPoints();
+  };
+
   /**
    * @param callback {Function()}
    **/

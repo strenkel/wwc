@@ -6,20 +6,22 @@ define(["jquery"], function ($) {
    * @param playElement {HTMLElement}
    * @param stopElement {HTMLElement}
    * @param stepElement {HTMLElement}
-   * @param resetElement {HTMLElement}
+   * @param nextElement {HTMLElement}
+   * @param refreshElement {HTMLElement}
    */
   var Gear = function(c) {
     this.playElement = c.playElement;
     this.stopElement = c.stopElement;
     this.stepElement = c.stepElement;
-    this.resetElement = c.resetElement;
+    this.nextElement = c.nextElement;
     this.refreshElement = c.refreshElement;
 
     // init listeners
     this.onPlayListeners = $.Callbacks();
     this.onStopListeners = $.Callbacks();
     this.onStepListeners = $.Callbacks();
-    this.onResetListeners = $.Callbacks();
+    this.onNextListeners = $.Callbacks();
+    this.onRefreshListeners = $.Callbacks();
 
     // init display
     this.showPlay();
@@ -28,8 +30,8 @@ define(["jquery"], function ($) {
     this.playElement.onclick = this.play.bind(this);
     this.stopElement.onclick = this.stop.bind(this);
     this.stepElement.onclick = this.step.bind(this);
-    this.resetElement.onclick = this.reset.bind(this);
-    this.refreshElement.onclick = this.reset.bind(this);
+    this.nextElement.onclick = this.next.bind(this);
+    this.refreshElement.onclick = this.refresh.bind(this);
   };
 
   Gear.prototype.addOnPlayListener = function(callback) {
@@ -44,8 +46,12 @@ define(["jquery"], function ($) {
     this.onStepListeners.add(callback);
   };
 
-  Gear.prototype.addOnResetListener = function(callback) {
-    this.onResetListeners.add(callback);
+  Gear.prototype.addOnNextListener = function(callback) {
+    this.onNextListeners.add(callback);
+  };
+
+  Gear.prototype.addOnRefreshListener = function(callback) {
+    this.onRefreshListeners.add(callback);
   };
 
   /** @private */
@@ -68,10 +74,16 @@ define(["jquery"], function ($) {
   };
 
   /** @private */
-  Gear.prototype.reset = function() {
+  Gear.prototype.next = function() {
     if (this.playIsShown) {
-      this.onResetListeners.fire();
+      this.onNextListeners.fire();
     }
+  };
+
+  /** @private */
+  Gear.prototype.refresh = function() {
+    this.showPlay();
+    this.onRefreshListeners.fire();
   };
 
   /** @private */
@@ -79,7 +91,7 @@ define(["jquery"], function ($) {
     this.playIsShown = true;
     this.showPlayElement();
     this.showStepElement();
-    this.showResetElement();
+    this.showNextElement();
     this.hideStopElement();
   };
 
@@ -88,7 +100,7 @@ define(["jquery"], function ($) {
     this.playIsShown = false;
     this.hidePlayElement();
     this.hideStepElement();
-    this.hideResetElement();
+    this.hideNextElement();
     this.showStopElement();
   };
 
@@ -113,13 +125,13 @@ define(["jquery"], function ($) {
   };
 
   /** @private */
-  Gear.prototype.showResetElement = function() {
-    enable(this.resetElement);
+  Gear.prototype.showNextElement = function() {
+    enable(this.nextElement);
   };
 
   /** @private */
-  Gear.prototype.hideResetElement = function() {
-    disable(this.resetElement);
+  Gear.prototype.hideNextElement = function() {
+    disable(this.nextElement);
   };
 
  /** @private */

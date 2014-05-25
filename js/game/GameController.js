@@ -3,7 +3,7 @@ define(["jquery"], function ($) {
   "use strict";
 
   var DEFAULT_GAME_DELAY = 1000;
-  
+
   var GameController = function(c) {
 
     // pass parameter
@@ -68,7 +68,13 @@ define(["jquery"], function ($) {
     }
   };
 
-  GameController.prototype.reset = function() {
+  GameController.prototype.refresh = function() {
+    this.pause();
+    this.plotter.resetPoints();
+    this.next();
+  };
+
+  GameController.prototype.next = function() {
     if (!this.isPlaying && !this.gameIsActive) {
       this.initNewGame();
     }
@@ -81,7 +87,7 @@ define(["jquery"], function ($) {
       this.gameDelay = DEFAULT_GAME_DELAY;
     }
   };
-  
+
   /** @private */
   GameController.prototype.onGameStop = function(moves) {
     this.plotter.passMoves(moves);

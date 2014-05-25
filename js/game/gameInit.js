@@ -91,14 +91,15 @@ require([
       playElement: document.getElementById("wwc-play"),
       stopElement: document.getElementById("wwc-stop"),
       stepElement: document.getElementById("wwc-step"),
-      resetElement: document.getElementById("wwc-reset"),
+      nextElement: document.getElementById("wwc-reset"),
       refreshElement: document.getElementById("wwc-refresh")
     });
 
     gear.addOnPlayListener(gameController.play.bind(gameController));
     gear.addOnStopListener(gameController.pause.bind(gameController));
     gear.addOnStepListener(gameController.stepForward.bind(gameController));
-    gear.addOnResetListener(gameController.reset.bind(gameController));
+    gear.addOnNextListener(gameController.next.bind(gameController));
+    gear.addOnRefreshListener(gameController.refresh.bind(gameController));
 
     gameController.initNewGame();
   });

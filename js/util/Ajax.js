@@ -18,12 +18,15 @@ define(["jquery"], function ($) {
   };
 
   /**
-   * Returns an array of worker names, e.g. ['w1.js', 'w2.js'].
+   * Returns an array of dropped worker names, e.g. ['w1.js', 'w2.js'].
+   * Returns the last n (default=30) dropped workers.
+   * Ordered by dropping time:
+   * The last dropped worker is the first one, the last but one is the sencond one and so on.
    *
    * @returns {$.Promise([String], ...)}
    */
-  var getWorkerNamesOrderedByPosition = function() {
-    return post("getWorkersOrderByPosition.php");
+  var getDroppedWorkers = function() {
+    return post("getDroppedWorkers.php");
   };
 
   /**
@@ -106,7 +109,7 @@ define(["jquery"], function ($) {
 
   return {
     getWorkerNameByPosition: getWorkerNameByPosition,
-    getWorkerNamesOrderedByPosition: getWorkerNamesOrderedByPosition,
+    getDroppedWorkers: getDroppedWorkers,
     uploadFile: uploadFile,
     checkSuperuser: checkSuperuser,
     saveResult: saveResult,

@@ -73,7 +73,7 @@ define([
     this.select0.add(new Option(ScheduleSelectOptions.LOCAL_FILE));
     this.select1.add(new Option(ScheduleSelectOptions.LOCAL_FILE));
     var _this = this;
-    Ajax.getWorkerNamesOrderedByPosition().done(function(workerNames) {
+    Ajax.getDroppedWorkers().done(function(workerNames) {
       workerNames.forEach(function(name) {
         _this.select0.add(new Option(name));
         _this.select1.add(new Option(name));

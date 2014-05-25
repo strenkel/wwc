@@ -49,7 +49,7 @@
    * @return {String}
    */
   function selectLastDroppedWorker($last) {
-    $names = selectLastDroppedWorkers();
+    $names = selectDroppedWorkers();
     if (sizeof($names) >= $last) {
       return $names[$last - 1];
     } else {
@@ -84,7 +84,15 @@
     return $names;
   }
 
-  function selectLastDroppedWorkers() {
+  /**
+   * Returns an array of dropped worker names, e.g. ['w1.js', 'w2.js'].
+   * Returns the last n (default=30) dropped workers.
+   * Ordered by dropping time:
+   * The last dropped worker is the first one, the last but one is the sencond one and so on.
+   *
+   * @return {[String]}
+   */
+  function selectDroppedWorkers() {
     $sql = "SELECT w.name FROM droppedworker d JOIN worker w ON d.player = w.id ORDER BY w.ts DESC LIMIT 30";
     $stmt = prepare($sql);
     $stmt->execute();

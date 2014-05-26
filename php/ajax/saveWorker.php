@@ -92,10 +92,10 @@ function checkStartDate($email) {
     return 'info@webworkercontest.net';
   }
   $currentTime = time();
-  $startTime = mktime(0, 0, 0, 5, 28, 2014);
+  $startTime = mktime(0, 0, 0, 5, 27, 2014);
   if ($currentTime >= $startTime) {
     return $email;
   }
-  die('Noch etwas Geduld. Am 28.05.2014 geht es los!');
+  die('Noch etwas Geduld. Am 27.05.2014 geht es los!');
 }
 ?>

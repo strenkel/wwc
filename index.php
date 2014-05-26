@@ -35,7 +35,7 @@
 					Die jeweils drei besten Worker werden prämiert. In den ersten drei Runden gibt es Bücher rund um JavaScript und die Webentwicklung zu gewinnen.
 					Im Finale warten ein Laptop und zwei Jahresabos der iX.
 					<br><br>
-					Startschuss für den CONTEST ist der 28.05.2014. Ab diesem Zeitpunkt lassen sich Web Worker hochladen. Die Start-Up-Sieger werden
+					Startschuss für den CONTEST ist der 27.05.2014. Ab diesem Zeitpunkt lassen sich Web Worker hochladen. Die Start-Up-Sieger werden
 					am 31. Mai festgelegt und danach geht es jede Woche weiter. Am 21. Juni 2014 ist das Finale!
 				</p>
 			</article>

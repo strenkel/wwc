@@ -44,7 +44,10 @@
 			<div class="toggleBox">
 				<p id="toggleHeadline" class="toggleHeadline">WEB WORKER CONTEST - Guide</p><div id="toggleIcon" class="toggleIcon">+</div>
 				<article id="toggleText" class="toggleText hidden">
-					<?php	include 'php/guideText.php'; ?>
+					<?php
+					  $withExample = true;
+					  include 'php/guideText.php';
+					?>
 				</article>
 			</div>
 			<a class="button" href="game.php"><span class="button_mid">Spiel starten</span></a>

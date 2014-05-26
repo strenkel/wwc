@@ -18,7 +18,7 @@ if(isset($file) && $file["error"]== UPLOAD_ERR_OK) {
   $author = getPost($_POST, "name");
   $email = getPost($_POST, "email");
 
-  $email = checkStartDate($email);
+  //$email = checkStartDate($email);
   checkFileSize($file);
   checkFileType($file);
   checkFileName($name);

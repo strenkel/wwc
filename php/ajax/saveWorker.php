@@ -52,7 +52,8 @@ function checkFileSize($file) {
 }
 
 function checkFileType($file) {
-  if (strpos($file['type'], 'javascript') === false) {
+  //if (strpos($file['type'], 'javascript') === false) { // doesn't work correctly; don't know why
+  if (strpos($file['name'], '.js') === false) {
     die('Error: Unsupported file type. Only javascript workers are allowed.');
   }
 }

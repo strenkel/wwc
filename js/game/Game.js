@@ -15,7 +15,10 @@ define(["jquery"], function ($) {
   Game.prototype.startNewGame = function(workerDisposer) {
     this.workers = workerDisposer.createWorkers();
     this.field.startNewGame(this.workers.length);
-    play(this.workers, this.field);
+    var _this = this;
+    window.setTimeout(function() {
+      play(_this.workers, _this.field);
+    }, 300);
   };
 
   /**

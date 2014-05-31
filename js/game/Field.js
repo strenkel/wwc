@@ -17,8 +17,6 @@ define([
     this.height = c.height; // {Integer} height <=> y
     this.maxMoveLength = c.maxMoveLength; // {Integer}
     this.onStopListeners = $.Callbacks();
-
-    //this.resetMaxMoveLength();
   };
 
   /**
@@ -27,12 +25,10 @@ define([
    * @param length {Integer}
    */
   Field.prototype.startNewGame = function(length) {
-
-    //this.resetMaxMoveLength();
-
     this.playerLength = length;
     this.moves = [];
     this.actualPosition = [];
+    this.workerError= [false, false];
     this.moveLength = 0;
     this.initGrid();
     this.initPlayers();
@@ -56,9 +52,6 @@ define([
    * @return {Boolean | null}
    */
   Field.prototype.walk = function (player, direction) {
-
-    //this.calcMaxMoveLength(player);
-
     this.moveLength++;
     if (this.moveLength <= this.maxMoveLength) {
       var newPosition = this.getNewPosition(player, direction);
@@ -67,14 +60,24 @@ define([
         return true;
       }
       return false;
-    } else { // game is over
-
-      //alert(this._maxMoveLength.length + " " + this._maxMoveLength[0]);
-
-      this.moves.push(-1);
-      this.onStopListeners.fire(this.moves);
+    } else {
+      this.stopGame();
       return null;
     }
+  };
+
+  /** public */
+  Field.prototype.error = function(player) {
+    this.workerError[player] = true;
+    if (this.workerError[0] && this.workerError[1]) {
+      this.stopGame();
+    }
+  };
+
+  /** @private */
+  Field.prototype.stopGame = function() {
+    this.moves.push(-1);
+    this.onStopListeners.fire(this.moves);
   };
 
   /** @private */
@@ -167,32 +170,6 @@ define([
     var y = position.y;
     return x >= 0 && x < this.width && y >= 0 && y < this.height;
   };
-
-
-
-
-  //Field.prototype.calcMaxMoveLength = function(player) {
-  //  if (this._lastPlayer == null) {
-  //    this._lastPlayer = player;
-  //    this._moveLength++;
-  //  } else if (this._lastPlayer == player) {
-  //    this._moveLength++;
-  //  } else {
-  //    if (this._moveLength > 50) {
-  //      this._maxMoveLength.push(this._moveLength);
-  //    }
-  //    this._moveLength = 0;
-  //    this._lastPlayer = player;
-  //  }
-  //};
-
-  //Field.prototype.resetMaxMoveLength = function() {
-  //  this._maxMoveLength = [];
-  //  this._moveLength = 0;
-  //  this._lastPlayer = null;
-  //};
-
-
 
   return Field;
 

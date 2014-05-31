@@ -47,6 +47,7 @@ define(["jquery"], function ($) {
       player;
 
     for (player = 0; player < playerLength; player++) {
+
       workers[player].onmessage = (function (player, event) {
         if (event.data.id === ids[player] && idWasNotWrong[player]) {
           var done = field.walk(player, event.data.direction);
@@ -59,6 +60,11 @@ define(["jquery"], function ($) {
           idWasNotWrong[player] = false;
         }
       }).bind(workers[player], player);
+
+      workers[player].onerror = (function (player) {
+        field.error(player);
+      }).bind(workers[player], player);
+      
     }
 
     // workers go on!

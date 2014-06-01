@@ -74,7 +74,7 @@ define([
     }
   };
 
-  /** @private */
+  /** public */
   Field.prototype.stopGame = function() {
     this.moves.push(-1);
     this.onStopListeners.fire(this.moves);

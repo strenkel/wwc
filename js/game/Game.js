@@ -17,7 +17,7 @@ define(["jquery"], function ($) {
     this.field.startNewGame(this.workers.length);
     var _this = this;
     window.setTimeout(function() {
-      play(_this.workers, _this.field);
+      _this.timeoutId = play(_this.workers, _this.field);
     }, 300);
   };
 
@@ -31,6 +31,7 @@ define(["jquery"], function ($) {
 
   /** @private */
   Game.prototype.onStop = function(moves) {
+    window.clearTimeout(this.timeoutId);
     terminateWorkers(this.workers);
     this.onStopListeners.fire(moves);
   };
@@ -64,13 +65,19 @@ define(["jquery"], function ($) {
       workers[player].onerror = (function (player) {
         field.error(player);
       }).bind(workers[player], player);
-      
+
     }
+
+    var timeoutId = window.setTimeout(function() {
+      field.stopGame();
+    }, 30000);
 
     // workers go on!
     for (player = 0; player < playerLength; player++) {
       workers[player].postMessage({id: ids[player]});
     }
+
+    return timeoutId;
   };
 
   var terminateWorkers = function(workers) {

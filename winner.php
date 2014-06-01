@@ -34,21 +34,21 @@
 				<tr>
 					<td>1st</td>
 					<td>31.05.14</td>
-					<td></td>
+					<td>exo4.js | exo</td>
 					<td><?php include 'php/links/prize11.php'; ?></td>
 					<td>dpunkt.verlag</td>
 				</tr>
 				<tr>
 					<td>2nd</td>
 					<td></td>
-					<td></td>
+					<td>o_o--__--__--.js | Stefan Dirnstorfer</td>
 					<td><?php include 'php/links/prize12.php'; ?></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>3rd</td>
 					<td></td>
-					<td></td>
+					<td>webholics_007.js | Webholics</td>
 					<td><?php include 'php/links/prize13.php'; ?></td>
 					<td></td>
 				</tr>

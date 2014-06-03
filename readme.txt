@@ -1,5 +1,5 @@
 INSTALLATION
--- stand: 24.5.2014
+-- stand: 03.06.2014
 
 - Apache Server (min-version 2.4) aufsetzen mit php (min-version 5.3)
 - MySql - Server mit Datenbank wwc / wwctest aufsetzen (min-version 5.5)
@@ -17,7 +17,9 @@ INSTALLATION
     mysqlPassword_wwc = "..."
     mysqlPassword_wwctest = "..."
 - Einen Ordner 'worker' im Source-Verzeichnis 'wwc' anlegen. Schreibrechte für den Server setzten. (Hier kommen die hochgeladenen Worker rein.)
+- Einen Ordner 'droppedworker' im Source-Verzeichnis 'wwc' anlegen. Schreibrechte für den Server setzten.
+- Den Ordner 'worker' mit http access schützen.
 - achape und mysql starten
 - z.B. 'http://localhost/wwc/' in einem aktuellen Browser (ff>29, ie>11, chrome>34) aufrufen.
-- Worker aus dem Verzeichnis 'worker-examples' zum Testen hochladen.
+- Auf der WWC-Seite Upload Worker aus dem Verzeichnis 'worker-examples' zum Testen hochladen.
 - Weitere Infos, insbesondere zum Spiel: www.webworkercontest.net

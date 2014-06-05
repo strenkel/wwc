@@ -70,7 +70,7 @@ Jetzt müsst ihr ihn nur noch ein wenig tunen ;-)
 </p>
 <br>
 <p>
-  Der CONTEST ist für die jeweils aktuellen Browser (z.Z. Firefox 29, Chrome 35, IE 11) ausgelegt. Die Top 20 werden vornehmlich auf dem aktuellen Firefox ausgespielt.
+  Der CONTEST ist für die jeweils aktuellen Browser (z.Z. Firefox 29, Chrome 35, IE 11) ausgelegt. Die Top 20 werden auf dem aktuellen Firefox ausgespielt.
 </p>
 <br>
 <p>

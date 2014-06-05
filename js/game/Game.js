@@ -7,6 +7,7 @@ define(["jquery"], function ($) {
     this.field = field;
     this.onStopListeners = $.Callbacks();
     field.addOnStopListener(this.onStop.bind(this));
+    this.done = [];
   };
 
   /**
@@ -15,10 +16,40 @@ define(["jquery"], function ($) {
   Game.prototype.startNewGame = function(workerDisposer) {
     this.workers = workerDisposer.createWorkers();
     this.field.startNewGame(this.workers.length);
+    this.iAmReady = [false, false];
+
+    // limiting playing duration
+    this.timeoutId = window.setTimeout(function() {
+      this.field.stopGame();
+    }, 30000);
+
+    var player;
+    var playerLength = this.workers.length;
     var _this = this;
-    window.setTimeout(function() {
-      _this.timeoutId = play(_this.workers, _this.field);
-    }, 300);
+
+    for (player = 0; player < playerLength; player++) {
+
+      // handle first move
+      this.workers[player].onmessage = (function (player, event) {
+        this.onmessage = null;
+        _this.done[player] = _this.field.walk(player, event.data.direction);
+        _this.workerIsReady(player);
+      }).bind(this.workers[player], player);
+
+      // handle first error
+      this.workers[player].onerror = (function (player) {
+        this.onerror = null;
+        _this.field.error(player);
+        _this.workerIsReady(player);
+      }).bind(this.workers[player], player);
+
+    }
+
+    // workers make your first move
+    for (player = 0; player < playerLength; player++) {
+      this.workers[player].postMessage({id: getRandomId()});
+    }
+
   };
 
   /**
@@ -27,6 +58,14 @@ define(["jquery"], function ($) {
    */
   Game.prototype.addOnStopListener = function(callback) {
     this.onStopListeners.add(callback);
+  };
+
+  /** @private */
+  Game.prototype.workerIsReady = function(player) {
+    this.iAmReady[player] = true;
+    if (this.iAmReady[0] && this.iAmReady[1]) {
+      play(this.workers, this.field, this.done);
+    }
   };
 
   /** @private */
@@ -39,8 +78,9 @@ define(["jquery"], function ($) {
   /**
    * @param workers {[Worker]}
    * @param field {Field}
+   * @param firstDone {[Boolean]}
    */
-  var play = function(workers, field) {
+  var play = function(workers, field, firstDone) {
 
     var playerLength = workers.length,
       ids = getRandomIds(playerLength),
@@ -68,16 +108,14 @@ define(["jquery"], function ($) {
 
     }
 
-    var timeoutId = window.setTimeout(function() {
-      field.stopGame();
-    }, 30000);
-
     // workers go on!
     for (player = 0; player < playerLength; player++) {
-      workers[player].postMessage({id: ids[player]});
+      workers[player].postMessage({
+        id: ids[player],
+        done: firstDone[player]
+      });
     }
 
-    return timeoutId;
   };
 
   var terminateWorkers = function(workers) {

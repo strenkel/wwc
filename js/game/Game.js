@@ -18,14 +18,14 @@ define(["jquery"], function ($) {
     this.field.startNewGame(this.workers.length);
     this.iAmReady = [false, false];
 
-    // limiting playing duration
-    this.timeoutId = window.setTimeout(function() {
-      this.field.stopGame();
-    }, 30000);
-
     var player;
     var playerLength = this.workers.length;
     var _this = this;
+
+    // limiting playing duration
+    this.timeoutId = window.setTimeout(function() {
+      _this.field.stopGame();
+    }, 30000);
 
     for (player = 0; player < playerLength; player++) {
 

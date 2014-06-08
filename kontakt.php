@@ -25,7 +25,7 @@
 				<br><br><br>
 				<u>Danksagung</u>
 				<br><br>
-				Bei der Realisierung des WEB WORKER CONTEST haben mich viele Menschen - durch einfache Worte und durch große Taten - unterstützt.
+				Bei der Realisierung des WEB WORKER CONTEST haben mich viele Menschen unterstützt.
 				<br><br>
 				<a target="_blank" href="http://www.goloroden.de/">Golo Roden</a> (dessen JavaScript Blog "Konsole & ..." ich mit Begeisterung lese) gebührt die Ehre,
 				das ganze so richtig ins Rollen gebracht zu haben. Carsten Meyer-Heder von <a target="_blank" href="http://www.team-neusta.de">team neusta</a> hat den

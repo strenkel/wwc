@@ -38,7 +38,7 @@
 					<div class="participation">
 						Teilnahmebedingungen:<br>
 						<br>
-						Die Teilname am WEB WORKER CONTEST (WWC) ist kostenlos. Mitmachen können
+						Die Teilnahme am WEB WORKER CONTEST (WWC) ist kostenlos. Mitmachen können
 						alle Personen und Teams. Man darf pro Tag mit maximal fünf Web Workern teilnehmen.
 						Es ist untersagt, codegleiche Web Worker zweimal hochzuladen. Dies gilt sowohl
 						für eigene, als auch für fremde Web Worker. Der Web-Worker-Code

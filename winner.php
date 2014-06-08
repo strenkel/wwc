@@ -73,21 +73,21 @@
 				<tr>
 					<td>1st</td>
 					<td>07.06.14</td>
-					<td></td>
+					<td>crossEater5.js | Piet</td>
 					<td><?php include 'php/links/prize21.php'; ?></td>
 					<td>O'Reilly</td>
 				</tr>
 				<tr>
 					<td>2nd</td>
 					<td></td>
-					<td></td>
+					<td>exo6.js | exo</td>
 					<td><?php include 'php/links/prize22.php'; ?></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>3rd</td>
 					<td></td>
-					<td></td>
+					<td>feri-wwc-step12.js | feri</td>
 					<td><?php include 'php/links/prize23.php'; ?></td>
 					<td></td>
 				</tr>

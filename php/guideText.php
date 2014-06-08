@@ -22,8 +22,8 @@
   Dabei ist der eigene Web Worker einfach eine lokale JavaScript-Datei mit entsprechendem Code. In diesem Fall wird der eigene
   Web Worker nicht auf den Server hochgeladen. Diese Möglichkeit dient vor allem dem Testen und Optimieren eigener Web Worker.
   Möchte man am WWC teilnehmen, so muss man seinen eigenen Web Worker auf der Upload-Seite hochladen.
-  Danach ist er auf der Top20&Challenger-Seite zu sehen. Zunächst ist er ein Challenger. Auf einem
-  lokalen Super-User Rechner tritt er dann gegen die Top 20 an. Je nach Platzierung etabiert er sich etweder in den Top 20
+  Danach ist er auf der Top30&Challenger-Seite zu sehen. Zunächst ist er ein Challenger. Auf einem
+  lokalen Super-User Rechner tritt er dann gegen die Top 30 an. Je nach Platzierung etabiert er sich etweder in den Top 30
   oder fliegt aus dem Wettbewerb raus. Die Top 3 der jeweiligen Wertungstage (31. Mai, 07., 14. & 21. Juni) erhalten tolle
   Sachpreise (siehe Prizes auf der Home-Site).
 </p>
@@ -70,7 +70,7 @@ Jetzt müsst ihr ihn nur noch ein wenig tunen ;-)
 </p>
 <br>
 <p>
-  Der CONTEST ist für die jeweils aktuellen Browser (z.Z. Firefox 29, Chrome 35, IE 11) ausgelegt. Die Top 20 werden auf dem aktuellen Firefox ausgespielt.
+  Der CONTEST ist für die jeweils aktuellen Browser (z.Z. Firefox 29, Chrome 35, IE 11) ausgelegt. Die Top 30 werden auf dem aktuellen Firefox ausgespielt.
 </p>
 <br>
 <p>

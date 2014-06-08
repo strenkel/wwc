@@ -16,7 +16,7 @@
 <section id="page">
 	<section id="content">
 		<div id="left50">
-			<h2>Top 20</h2>
+			<h2>Top 30</h2>
 			<hr width="100">
 			<table id="top20" cellspacing="5">
 				<thead>

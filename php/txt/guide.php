@@ -51,7 +51,7 @@
 <p>
 <?php
   if ($withExample) {
-    include 'php/example.php';
+    include 'php/txt/example.php';
   }
 ?>
 </p>

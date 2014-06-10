@@ -1,0 +1,1 @@
+Yes, I want to participate. I have read and agree to the terms and conditions.

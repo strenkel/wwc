@@ -14,7 +14,7 @@
 
 <section id="page">
 	<section id="content">
-		<h2>Impressum</h2>
+		<h2>About</h2>
 		<hr width="100">
 		<article>
 			<p>
@@ -24,7 +24,7 @@
 				D-28205 Bremen<br>
 				info@webworkercontest.net
 				<br><br><br>
-				Design und Umsetzung: <a target="_blank" href="http://www.team-neusta.de">team neusta</a>
+				Design and implementation: <a target="_blank" href="http://www.team-neusta.de">team neusta</a>
 				<br><br><br>
 				<u>Haftungsausschluss</u>
 				<br><br>

@@ -1,0 +1,1 @@
+Ja, ich möchte teilnehmen. Ich habe die Teilnamhmebedingungen gelesen und stimme ihnen zu.

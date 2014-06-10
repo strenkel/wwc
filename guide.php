@@ -20,7 +20,7 @@
 			<article>
 				<?php
 					$withExample = false;
-					include 'php/guideText.php';
+					include 'php/txten/guide.php';
 				?>
 			</article>
 		</div>
@@ -28,7 +28,7 @@
 			<h2>Web Worker Example</h2>
 			<hr width="100">
 				<section class="grey_background">
-					<?php include 'php/example.php'; ?>
+					<?php include 'php/txten/example.php'; ?>
 				</section>
 		</div>
 	</section>

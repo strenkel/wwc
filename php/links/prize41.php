@@ -1,1 +1,1 @@
-<a target="_blank" href="http://www.team-neusta.de/" title="Ein Laptop Deiner Wahl im Wert von 500 Euro.">Ein team neusta Laptop</a>
+<a target="_blank" href="http://www.team-neusta.de/" title="A laptop of your choice worth € 500.">A team neusta Laptop</a>

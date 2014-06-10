@@ -39,10 +39,10 @@
 					am 31. Mai festgelegt und danach geht es jede Woche weiter. Am 21. Juni 2014 ist das Finale!
 				</p>
 			</article>
-			<h2>Wie kann ich teilnehmen?</h2>
+			<h2>How can I participate?</h2>
 			<hr width="100">
 			<div class="toggleBox">
-				<p id="toggleHeadline" class="toggleHeadline">WEB WORKER CONTEST - Guide</p><div id="toggleIcon" class="toggleIcon">+</div>
+				<p id="toggleHeadline" class="toggleHeadline">Guide</p><div id="toggleIcon" class="toggleIcon">+</div>
 				<article id="toggleText" class="toggleText hidden">
 					<?php
 					  $withExample = true;
@@ -50,7 +50,7 @@
 					?>
 				</article>
 			</div>
-			<a class="button" href="game.php"><span class="button_mid">Spiel starten</span></a>
+			<a class="button" href="game.php"><span class="button_mid">Start Game</span></a>
 		</div>
 		<div id="right">
 			<h2>Prizes</h2>

@@ -22,7 +22,7 @@
 				<div class="page-content">
 					<div class="uploadContainer">
 						<div class="fileUpload button_small">
-							<span>Datei auswählen</span>
+							<span>Select File</span>
 							<input id="uploadBtn" type="file" class="upload" />
 						</div>
 						<div id="uploadFile"></div>

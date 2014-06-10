@@ -729,8 +729,9 @@ hr {
 .fileUpload {
 	position: relative;
 	overflow: hidden;
-	width: 125px;
+	width: 71px;
 }
+
 .fileUpload input.upload {
 	cursor: pointer;
 	font-size: 20px;

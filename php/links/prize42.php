@@ -1,1 +1,1 @@
-<a target="_blank" href="http://shop.heise.de/ix-abo">iX Jahresabo</a>
+<a target="_blank" href="http://shop.heise.de/ix-abo">iX Annual Subscription</a>

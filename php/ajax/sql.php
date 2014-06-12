@@ -413,6 +413,13 @@
     $stmt->close();
   }
 
+  function isInChart($player) {
+    $sql = "SELECT player FROM chart WHERE player=?";
+    $stmt = prepare($sql);
+    $stmt->bind_param("i", $player);
+    return statementHasResult($stmt);
+  }
+
   /**
    * @return {Integer | null}
    */

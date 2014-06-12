@@ -102,6 +102,16 @@ define(["jquery"], function ($) {
     });
   };
 
+  /**
+   * @param workerId {Number}
+   */
+  var removePlayer = function(workerId) {
+    return post("removePlayer.php", {
+      id: workerId,
+      password: password
+    });
+  };
+
   /** @private */
   var post = function(fileName, parameters) {
     return $.post(PHP_ROOT + fileName, parameters);
@@ -115,7 +125,8 @@ define(["jquery"], function ($) {
     saveResult: saveResult,
     getTable: getTable,
     getNextWorkerPair: getNextWorkerPair,
-    getChallenger: getChallenger
+    getChallenger: getChallenger,
+    removePlayer: removePlayer
   };
 
 });

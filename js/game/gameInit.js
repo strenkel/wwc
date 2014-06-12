@@ -40,6 +40,8 @@ require([
        enterElm: document.getElementById("wwc-enter"),
        messageElm: document.getElementById("wwc-login-message"),
        uploadResultElm: document.getElementById("wwc-upload-result"),
+       removePlayerInput: document.getElementById("wwc-remove-player-id"),
+       removePlayerButton: document.getElementById("wwc-remove-player"),
        scheduleSelect: scheduleSelect
     });
 

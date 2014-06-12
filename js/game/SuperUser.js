@@ -17,21 +17,19 @@ define([
   /**
    * Manage the super user page.
    *
-   * @param passwordElm {Input}
-   * @param enterElm {Button}
-   * @param uploasResultElm {Checkbox}
-   * @param messageElm {Div | Span}
    */
   var SuperUser = function(a) {
 
     // pass arguments
-    this.loginRoot = a.loginRoot;
-    this.controlRoot = a.controlRoot;
-    this.passwordElm = a.passwordElm;
-    this.enterElm = a.enterElm;
-    this.messageElm = a.messageElm;
-    this.uploadResultElm = a.uploadResultElm;
-    this.scheduleSelect = a.scheduleSelect;
+    this.loginRoot = a.loginRoot; // {Element}
+    this.controlRoot = a.controlRoot; // {Element}
+    this.passwordElm = a.passwordElm; // {Input}
+    this.enterElm = a.enterElm; // {Button}
+    this.messageElm = a.messageElm; // {Div | Span}
+    this.uploadResultElm = a.uploadResultElm; // {Checkbox}
+    this.removePlayerInput = a.removePlayerInput; // {Input}
+    this.removePlayerButton = a.removePlayerButton; // {Button}
+    this.scheduleSelect = a.scheduleSelect; // {ScheduleSelect}
 
     // init
     if (this.hasControls()) {
@@ -41,10 +39,17 @@ define([
       this.hideControls();
       this.hideMessage();
       this.enterElm.onclick = this.handleLogin.bind(this);
+      this.removePlayerButton.onclick = this.removePlayer.bind(this);
     } else {
       this.shouldSaveResult = returnFalse;
       this.getPassword = returnNull;
     }
+  };
+
+  /** @private */
+  SuperUser.prototype.removePlayer = function() {
+    var playerId = parseInt(this.removePlayerInput.value, 10);
+    Ajax.removePlayer(playerId);
   };
 
   /**

@@ -9,6 +9,8 @@
     <span id="wwc-control-root">
       <input id="wwc-upload-result" type="checkbox" />
       <label>Upload results</label>
+      <input id="wwc-remove-player-id" type="text" placeholder="Remove Player ID"/>
+      <input id="wwc-remove-player" type="button" value="Remove player" />
     </span>
   </div>
 </div>

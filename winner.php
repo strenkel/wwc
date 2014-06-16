@@ -112,21 +112,21 @@
 				<tr>
 					<td>1st</td>
 					<td>14.06.14</td>
-					<td></td>
+					<td>exo9.js | exo</td>
 					<td><?php include 'php/links/prize31.php'; ?></td>
 					<td>Galileo Computing</td>
 				</tr>
 				<tr>
 					<td>2nd</td>
 					<td></td>
-					<td></td>
+					<td>feri-wwc-step14.js | feri</td>
 					<td><?php include 'php/links/prize32.php'; ?></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>3rd</td>
 					<td></td>
-					<td></td>
+					<td>Ghoul41.js | GhoulLord</td>
 					<td><?php include 'php/links/prize33.php'; ?></td>
 					<td></td>
 				</tr>

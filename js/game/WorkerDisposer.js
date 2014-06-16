@@ -1,5 +1,5 @@
 /* global Worker */
-define(function () {
+define(["util/Ajax"], function (Ajax) {
 
   "use strict";
 
@@ -16,7 +16,7 @@ define(function () {
   var WorkerDisposer = function(file0, file1, isDropped) {
     this.file0 = file0;
     this.file1 = file1;
-    this.workerDir = isDropped ? DROPPED_WORKER_DIR : WORKER_DIR;
+    this.isDropped = isDropped;
   };
 
   /**
@@ -41,7 +41,7 @@ define(function () {
       window.URL.revokeObjectURL(objectURL);
       return worker;
     } else {
-      return new Worker(this.workerDir + file);
+      return new Worker(Ajax.createWorkerUrl(file, this.isDropped));
     }
   };
 

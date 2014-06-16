@@ -112,6 +112,18 @@ define(["jquery"], function ($) {
     });
   };
 
+  /**
+   * @param file {String} like 'example.js'
+   * @param isDropped {Boolean}
+   */
+  var createWorkerUrl = function(file, isDropped) {
+    var url = "php/ajax/sendWorker.php?worker=" + file;
+    if (!isDropped) {
+      url = url + "&password=" + password;
+    }
+    return url;
+  };
+
   /** @private */
   var post = function(fileName, parameters) {
     return $.post(PHP_ROOT + fileName, parameters);
@@ -126,7 +138,8 @@ define(["jquery"], function ($) {
     getTable: getTable,
     getNextWorkerPair: getNextWorkerPair,
     getChallenger: getChallenger,
-    removePlayer: removePlayer
+    removePlayer: removePlayer,
+    createWorkerUrl: createWorkerUrl
   };
 
 });

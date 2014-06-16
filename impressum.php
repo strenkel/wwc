@@ -22,7 +22,8 @@
 				Stefan Trenkel<br>
 				Tannhäuserplatz 3<br>
 				D-28205 Bremen<br>
-				info@webworkercontest.net
+				info@webworkercontest.net<br>
+				<a href="http://www.stefantrenkel.de">www.stefantrenkel.de</a>
 				<br><br><br>
 				Design and implementation: <a target="_blank" href="http://www.team-neusta.de">team neusta</a>
 				<br><br><br>

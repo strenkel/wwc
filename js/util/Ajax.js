@@ -1,3 +1,4 @@
+/* global Blob */
 define(["jquery"], function ($) {
 
   "use strict";
@@ -116,12 +117,16 @@ define(["jquery"], function ($) {
    * @param file {String} like 'example.js'
    * @param isDropped {Boolean}
    */
-  var createWorkerUrl = function(file, isDropped) {
-    var url = "php/ajax/sendWorker.php?worker=" + file;
+  var getWorkerFile = function(file, isDropped) {
+    var http = new XMLHttpRequest();
+    http.open("POST", PHP_ROOT + "sendWorker.php", false);
+    http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    var sendParam = "worker=" + file;
     if (!isDropped) {
-      url = url + "&password=" + password;
+      sendParam = sendParam + "&password=" + password;
     }
-    return url;
+    http.send(sendParam);
+    return new Blob([http.responseText], { type: 'text/javascript' });
   };
 
   /** @private */
@@ -139,7 +144,7 @@ define(["jquery"], function ($) {
     getNextWorkerPair: getNextWorkerPair,
     getChallenger: getChallenger,
     removePlayer: removePlayer,
-    createWorkerUrl: createWorkerUrl
+    getWorkerFile: getWorkerFile
   };
 
 });

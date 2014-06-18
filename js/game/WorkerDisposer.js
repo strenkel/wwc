@@ -35,14 +35,13 @@ define(["util/Ajax"], function (Ajax) {
 
   /** @private */
   WorkerDisposer.prototype.createWorker = function(file) {
-    if (isLocalFile(file)) {
-      var objectURL = window.URL.createObjectURL(file);
-      var worker = new Worker(objectURL);
-      window.URL.revokeObjectURL(objectURL);
-      return worker;
-    } else {
-      return new Worker(Ajax.createWorkerUrl(file, this.isDropped));
+    if (!isLocalFile(file)) {
+      file = Ajax.getWorkerFile(file, this.isDropped);
     }
+    var objectURL = window.URL.createObjectURL(file);
+    var worker = new Worker(objectURL);
+    window.URL.revokeObjectURL(objectURL);
+    return worker;
   };
 
   var getName = function(file) {

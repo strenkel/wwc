@@ -10,8 +10,8 @@
   connectToDatabase();
 
   $workerDir = "../../";
-  if (isset($_GET["password"])) {
-    if (isSuperuser($_GET["password"])) {
+  if (isset($_POST["password"])) {
+    if (isSuperuser($_POST["password"])) {
       $workerDir = $workerDir."worker/";
     } else {
       die('Invalid password!');
@@ -20,6 +20,6 @@
     $workerDir = $workerDir."droppedworker/";
   }
 
-  $worker = pathinfo($_GET["worker"], PATHINFO_BASENAME); // prevent hacks
+  $worker = pathinfo($_POST["worker"], PATHINFO_BASENAME); // prevent hacks
   readfile($workerDir.$worker);
 ?>

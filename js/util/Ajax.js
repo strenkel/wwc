@@ -22,12 +22,16 @@ define(["jquery"], function ($) {
    * Returns an array of dropped worker names, e.g. ['w1.js', 'w2.js'].
    * Returns the last n (default=30) dropped workers.
    * Ordered by dropping time:
-   * The last dropped worker is the first one, the last but one is the sencond one and so on.
+   * The last dropped worker is the first one, the last but one is the second one and so on.
    *
    * @returns {$.Promise([String], ...)}
    */
   var getDroppedWorkers = function() {
     return post("getDroppedWorkers.php");
+  };
+
+  var getDroppedWorkerTable = function() {
+    return post("getDroppedWorkerTable.php");
   };
 
   /**
@@ -144,7 +148,8 @@ define(["jquery"], function ($) {
     getNextWorkerPair: getNextWorkerPair,
     getChallenger: getChallenger,
     removePlayer: removePlayer,
-    getWorkerFile: getWorkerFile
+    getWorkerFile: getWorkerFile,
+    getDroppedWorkerTable: getDroppedWorkerTable
   };
 
 });

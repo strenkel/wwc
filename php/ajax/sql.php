@@ -109,6 +109,23 @@
     return $names;
   }
 
+  function getDroppedWorkerTable() {
+    $sql = "SELECT w.name, w.author, Date(w.ts) FROM droppedworker d JOIN worker w ON d.player = w.id ORDER BY w.name ASC";
+    $stmt = prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($name, $author, $date);
+    $table = array();
+    while ($stmt->fetch()) {
+      $row = new stdClass;
+      $row->name = $name;
+      $row->author = $author;
+      $row->date = $date;
+      $table[] = $row;
+    }
+    $stmt->close();
+    return $table;
+  }
+
   /**
    * @param $name {String}
    * @return {Integer}

@@ -541,6 +541,13 @@ hr {
 	padding: 0 10px 0 0;
 }
 
+#dropped-worker th {
+	text-align: left;
+	font-size: 18px;
+	font-weight: 700;
+	width: 400px;
+}
+
 .text-align-right {
 	text-align: right;
 }

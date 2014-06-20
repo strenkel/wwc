@@ -11,7 +11,3 @@ require([
     new Challenger(document.getElementById("wwc-challenger-body"));
   });
 });
-
-
-
-

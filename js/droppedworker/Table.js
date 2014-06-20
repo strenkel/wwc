@@ -29,12 +29,9 @@ define([
   };
 
   /** @private */
-  Table.prototype.createTd = function(content, alignRight) {
+  Table.prototype.createTd = function(content) {
     var td = document.createElement("td");
     td.innerHTML = content;
-    if (alignRight) {
-      td.className = "text-align-right";
-    }
     return td;
   };
 

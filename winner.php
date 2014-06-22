@@ -152,21 +152,21 @@
 					<tr>
 						<td>1st</td>
 						<td>21.06.14</td>
-						<td></td>
+						<td> feri-dyn-04.js | feri</td>
 						<td><?php include 'php/links/prize41.php'; ?></td>
 						<td>team neusta</td>
 					</tr>
 					<tr>
 						<td>2nd</td>
 						<td></td>
-						<td></td>
+						<td>exo9.js | exo</td>
 						<td><?php include 'php/links/prize42.php'; ?></td>
 						<td>iX</td>
 					</tr>
 					<tr>
 						<td>3rd</td>
 						<td></td>
-						<td></td>
+						<td>Ghoul99.js | GhoulLord</td>
 						<td><?php include 'php/links/prize42.php'; ?></td>
 						<td></td>
 					</tr>

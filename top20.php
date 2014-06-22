@@ -48,7 +48,7 @@
 			</table>
 
 			<div style="margin-top: 100px;">
-			  <h2>Dropped Worker</h2>
+			  <h2>Dropped Workers</h2>
 			  <hr width="100">
 			  <a href="droppedworker.php">All dropped workers.</a>
 		</div>

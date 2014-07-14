@@ -21,7 +21,6 @@
   for testing and optimizing your own Web Worker. If you want to participate in the WWC you have to upload your Worker on the Upload page.
   After that you can see your Worker as a challenger on the Top30 & Challenger page. On a local super-user computer your Worker
   competes against the Top 30. Depending on the placement he ends up in the Top 30 or leaves the CONTEST.
-  The top 3 of the scoring days (May 31, & June 07, 14 & 21) will receive great prizes (see Prizes on the Start page).
 </p>
 <br>
 <p>

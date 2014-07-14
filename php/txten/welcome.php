@@ -8,11 +8,7 @@ The competing JavaScript programs are Web Workers.
 The WWC is perhaps the first programming game that can be played in the browser.
 Go to the Guide for the exact rules of the game and learn how to program such Web Workers.
 <br><br>
-There are many prizes awaiting the best Web Workers. The game is played over four rounds: Start Up,  Round 1 , Round 2 and  the Final.
-Prizes go to the three best workers in each round.
-In the first three rounds you can win books about JavaScript and web development.
-In the final a laptop and two annual iX subscriptions can be won.
+The CONTEST was lanched on May 27th 2014. A prize phase last until Juni 21th 2014.
+Now you can play the game for fun.
 <br><br>
-Launch of the CONTEST is May 27th  2014. From this point on Web Workers can be uploaded.
-The Start Up winners will be determined on May 31st and then it continues every week.
-The Final is on June 21st.
+For inspiration you can download the code of the <a href="http://www.webworkercontest.net/finaltop30/finaltop30.zip">final top30</a>.

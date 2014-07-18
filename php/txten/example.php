@@ -1,8 +1,9 @@
 <pre><code>
 var direction;
 
-// Called when the main program sends
-// the success message to the Web Workers.
+// Called when the main program
+// sends the success message to
+// the Web Workers.
 onmessage = function (event) {
 
   // The success message is send with
@@ -18,9 +19,9 @@ onmessage = function (event) {
   }
 
   // Tells the main program the new
-  // direction. The direction is sent with
-  // the field 'direction'. The ID is sent
-  // with the field 'id'.
+  // direction. The direction is sent
+  // with the field 'direction'. The
+  // ID is sent with the field 'id'.
   postMessage({
     id: event.data.id,
     direction: direction

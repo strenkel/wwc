@@ -12,3 +12,5 @@ The CONTEST was lanched on May 27th 2014. A prize phase last until Juni 21th 201
 Now you can compete for the best strategy to conquer a field just for fun.
 <br><br>
 For inspiration you can download the code of the <a href="http://www.webworkercontest.net/finaltop30/finaltop30.zip">final top 30</a>.
+The code of the CONTEST can be found at <a href="https://github.com/strenkel/wwc">GitHub</a>.
+Videos of the winners are on <a href='https://www.youtube.com/channel/UCNqOUOlC8UOYYLdGHhFbY-Q'>YouTube</a>.

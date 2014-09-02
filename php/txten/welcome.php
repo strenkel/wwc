@@ -14,3 +14,7 @@ Now you can compete for the best strategy to conquer a field just for fun.
 For inspiration you can download the code of the <a href="http://www.webworkercontest.net/finaltop30/finaltop30.zip">final top 30</a>.
 The code of the CONTEST can be found at <a href="https://github.com/strenkel/wwc">GitHub</a>.
 Videos of the winners are on <a href='https://www.youtube.com/channel/UCNqOUOlC8UOYYLdGHhFbY-Q'>YouTube</a>.
+Articles about JavaScript programming games can be found on
+<a href='https://hacks.mozilla.org/2014/08/programming-games-in-the-browser/'>Mozilla Hacks</a> and
+<a href='http://blog.team-neusta.de/index.php/spektrum/agile-und-development/programmierspiele-im-browser-html5-machts-moeglich/'>
+team neusta blog</a>.

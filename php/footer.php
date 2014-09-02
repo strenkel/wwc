@@ -16,6 +16,7 @@
 		</section>
 		<section class="right">
 			<ul>
+				<li><a href="links.php">Links</a></li>
 				<li><a href="kontakt.php">Contact</a></li>
 				<li><a href="impressum.php">About</a></li>
 				<li><a target="_blank" href="https://twitter.com/workercontest"><img src="images/logos/twitter.jpg" alt="WWC-Logo" /></a></li>

@@ -22,6 +22,7 @@
 				Tannhäuserplatz 3<br>
 				D-28205 Bremen<br>
 				info@webworkercontest.net<br>
+				<a href="http://www.stefantrenkel.de">www.stefantrenkel.de</a><br>
 				<br><br><br>
 				<?php include 'php/txten/thanks.php';?>
 				<br><br>

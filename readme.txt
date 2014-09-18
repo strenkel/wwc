@@ -1,5 +1,5 @@
 INSTALLATION
--- stand: 03.06.2014
+-- Stand: 03.06.2014
 
 - Apache Server (min-version 2.4) aufsetzen mit php (min-version 5.3)
 - MySql - Server mit Datenbank wwc / wwctest aufsetzen (min-version 5.5)
@@ -23,3 +23,6 @@ INSTALLATION
 - z.B. 'http://localhost/wwc/' in einem aktuellen Browser (ff>29, ie>11, chrome>34) aufrufen.
 - Auf der WWC-Seite Upload Worker aus dem Verzeichnis 'worker-examples' zum Testen hochladen.
 - Weitere Infos, insbesondere zum Spiel: www.webworkercontest.net
+
+LIZENZ:
+Der Code steht unter der GNU General Public License.
